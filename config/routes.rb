@@ -1,7 +1,7 @@
 PrRails::Application.routes.draw do
   resources :pages, :except => :show
 
-  devise_for :users
+  devise_for :users, :path_names => { :sign_in => "login", :sign_out => "logout" }
 
   get ':id', :to => 'pages#show', :as => :page
 
