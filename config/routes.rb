@@ -1,7 +1,9 @@
 PrRails::Application.routes.draw do
-  resources :pages
+  resources :pages, :except => :show
 
   devise_for :users
+
+  get ':id', :to => 'pages#show', :as => :page
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
