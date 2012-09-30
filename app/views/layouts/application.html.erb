@@ -8,18 +8,18 @@
 </head>
 <body>
   <div id="prWrapper">
-  	<div id="prContainer">
-  		<div id="header">			
-  		<p><%= link_to image_tag('logo_no_tagline.png', :id => "logo", :alt => "Plantright Home"), root_path %></p>
-  		<p id="tagline">Stopping the sale of invasive plants in California</p>
-  			<div id="donate">
-  			<a href="https://npo.networkforgood.org/Donate/Donate.aspx?npoSubscriptionId=1003856"><span>Donate Now</span></a>
-  			</div>
-  		</div><!-- end #header -->
+    <div id="prContainer">
+      <div id="header">     
+        <p><%= link_to image_tag('logo_no_tagline.png', :id => "logo", :alt => "Plantright Home"), root_path %></p>
+        <p id="tagline">Stopping the sale of invasive plants in California</p>
+        <div id="donate">
+          <a href="https://npo.networkforgood.org/Donate/Donate.aspx?npoSubscriptionId=1003856"><span>Donate Now</span></a>
+        </div>
+      </div><!-- end #header -->
 
       <div id="page">
 
-        <div id="leftnav">	
+        <div id="leftnav">  
 
         <ul class="menu">
         <li class="expanded first dhtml-menu  active-trail"><a href="/contact/plantright" title="" id="dhtml_menu-1506">About Us</a>
@@ -77,6 +77,9 @@
 
         <div id="main">
 
+          <% flash.each do |key, value| %>
+            <%= content_tag :div, value, :class => "flash #{key}" %>
+          <% end %>
           <%= yield %>
 
           <div id="footer">
@@ -87,16 +90,11 @@
             <div id="footernav">
             <p><a href="/contact/plantright">Contact Us</a> &nbsp;|&nbsp;  <a href="/contact/website">Website feedback</a>  &nbsp;|&nbsp;   Site by <a href="http://ignoredbydinosaurs.com">IBD</a> and <a href="http://filadesign.com">FILA Design</a></p>
             </div>
-          </div><!-- end #footer -->	
+          </div><!-- end #footer -->  
 
         </div><!-- end #main -->
       </div><!-- end #page -->
     </div><!-- end prContainer -->
   </div><!-- end prWrapper -->
-
-
-
-
-
 </body>
 </html>

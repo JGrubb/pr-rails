@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
-  # GET /pages
-  # GET /pages.json
+  
+  before_filter :authorize_admin!, :except => :show
+
   def index
     @pages = Page.all
 

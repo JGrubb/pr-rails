@@ -1,10 +1,10 @@
 PrRails::Application.routes.draw do
-  resources :pages, :except => :show
+  resources :pages, :except => [:show, :update]
 
   devise_for :users, :path_names => { :sign_in => "login", :sign_out => "logout" }
 
   get ':id', :to => 'pages#show', :as => :page
-
+  put ':id', :to => 'pages#update', :as => :page
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
