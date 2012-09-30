@@ -5,7 +5,7 @@
 
 body  {
 	font: 75% Helvetica, Arial, sans-serif;
-	background: #fff url(../images/newbg1.gif) repeat-x left -130px;
+	background: #fff url(newbg1.gif) repeat-x left -130px;
 	color: #000;
 }
 
@@ -130,7 +130,7 @@ margin: 0px 0px 20px;
 
 #header	{
 	margin: 0px 8px 2px 10px;
-	background: url(../images/header_bg_stripe.png) repeat-x top right;
+	background: url(header_bg_stripe.png) repeat-x top right;
 }
 
 #header img#logo	{
@@ -159,7 +159,7 @@ margin: 0px 0px 20px;
 	position: absolute;
 	top: 36px;
 	right: 8px;
-	background: url(../images/donate_button.png) no-repeat top left;
+	background: url(donate_button.png) no-repeat top left;
 	color: #c63403;
 	text-transform: uppercase;
 	font-size: 23px;
@@ -180,7 +180,7 @@ margin: 0px 0px 20px;
 
 
 #header div#donate a:hover	{
-	background: url(../images/donate_button.png) no-repeat left -78px;
+	background: url(donate_button.png) no-repeat left -78px;
 	color: #a83000;
 }
 
@@ -227,14 +227,14 @@ margin: 0px 0px 20px;
 
 #leftnav ul.menu li.dhtml-menu.collapsed a	{
 	display: block;
-	background: url(../images/arrow-collapsed.png) no-repeat 0px 8px;
+	background: url(arrow-collapsed.png) no-repeat 0px 8px;
 	margin-left: -11px;
 	padding-left: 11px;
 }
 
 #leftnav ul.menu li.dhtml-menu.expanded a	{
 	display: block;
-	background: url(../images/arrow-expanded.png) no-repeat 0px 9px;
+	background: url(arrow-expanded.png) no-repeat 0px 9px;
 	margin-left: -11px;
 	padding-left:11px;
 }
@@ -406,19 +406,19 @@ div.contentBox h2 a:hover	{
 
 div.contentBox#box1 	{
 	width: 260px;
-	background: url(../images/ca_map_green.png) no-repeat top left;
+	background: url(ca_map_green.png) no-repeat top left;
 }
 
 div.contentBox#box2 	{
 	border-left: solid 1px #e9e6d0;
 	border-right: solid 1px #e9e6d0;
-	background: url(../images/pampas_cutout.jpg) no-repeat center 72px;
+	background: url(pampas_cutout.jpg) no-repeat center 72px;
 }
 
 div.contentBox#box3 	{
 	border-right: none;
 	margin-right: 0px;
-	background: url(../images/flower_girl.jpg) no-repeat 112px 10px;
+	background: url(flower_girl.jpg) no-repeat 112px 10px;
 }
 
 

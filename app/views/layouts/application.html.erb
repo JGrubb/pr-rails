@@ -7,20 +7,96 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="prWrapper">
+  	<div id="prContainer">
+  		<div id="header">			
+  		<p><%= link_to image_tag('logo_no_tagline.png', :id => "logo", :alt => "Plantright Home"), root_path %></p>
+  		<p id="tagline">Stopping the sale of invasive plants in California</p>
+  			<div id="donate">
+  			<a href="https://npo.networkforgood.org/Donate/Donate.aspx?npoSubscriptionId=1003856"><span>Donate Now</span></a>
+  			</div>
+  		</div><!-- end #header -->
 
-<% if user_signed_in? %>
-  Logged in as <%= content_tag :strong, current_user.email %>.
-  <%= link_to "Edit profile", edit_user_registration_path %> | 
-  <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
-<% else %>
-  <%= link_to "Sign Up", new_user_registration_path %> | 
-  <%= link_to "Login", new_user_session_path %>
-<% end %>
-<% flash.each do |key, value| %>
-  <%= content_tag :div, value, :class => "flash #{key}" %>
-<% end %>
+      <div id="page">
 
-<%= yield %>
+        <div id="leftnav">	
+
+        <ul class="menu">
+        <li class="expanded first dhtml-menu  active-trail"><a href="/contact/plantright" title="" id="dhtml_menu-1506">About Us</a>
+          <ul class="menu">
+          <li class="leaf first dhtml-menu  active-trail"><a href="/history" title="History" id="dhtml_menu-1526" class="active">History</a></li>
+          <li class="leaf  dhtml-menu "><a href="/staff" title="Staff" id="dhtml_menu-1527">Staff</a></li>
+          <li class="leaf  dhtml-menu "><a href="/steering-committee" title="Steering Committee" id="dhtml_menu-1528">Steering committee</a></li>
+          <li class="leaf  dhtml-menu "><a href="/supporters" title="Supporters" id="dhtml_menu-1529">Supporters</a></li>
+          <li class="leaf last dhtml-menu "><a href="/contact/plantright" title="" id="dhtml_menu-1531">Contact us</a></li>
+          </ul>
+        </li> 
+        <!--
+        <li class="expanded  dhtml-menu  collapsed start-collapsed "><a href="/map" title="" id="dhtml_menu-1507">Invasive Plants &amp; Alternatives</a>
+          <ul class="menu">
+            <li class="leaf first dhtml-menu "><a href="/map" title="" id="dhtml_menu-1512">Plants by region of California</a></li>
+            <li class="leaf  dhtml-menu "><a href="/impacts" title="" id="dhtml_menu-1513">Impacts of invasive plants</a></li>
+            <li class="leaf last dhtml-menu "><a href="/benefits" title="" id="dhtml_menu-1514">Benefits of Planting Right</a></li>
+            </ul>
+            </li>
+            <li class="expanded  dhtml-menu  collapsed start-collapsed "><a href="/home-gardeners" title="" id="dhtml_menu-1508">How to Help</a>
+            <ul class="menu">
+            <li class="leaf first dhtml-menu "><a href="/home-gardeners" title="" id="dhtml_menu-1517">Home gardeners</a></li>
+            <li class="leaf  dhtml-menu "><a href="/horticultural-professionals" title="" id="dhtml_menu-1518">Nursery professionals</a></li>
+            <li class="leaf  dhtml-menu "><a href="/spread-word" title="" id="dhtml_menu-1519">Help spread the word</a></li>
+            <li class="leaf  dhtml-menu "><a href="/spring-nursery-survey" title="" id="dhtml_menu-1520">Spring Nursery Survey</a></li>
+            <li class="leaf last dhtml-menu "><a href="https://npo.networkforgood.org/Donate/Donate.aspx?npoSubscriptionId=1003856" title="" id="dhtml_menu-1539">Donate</a></li>
+          </ul>
+        </li>
+        <li class="expanded last dhtml-menu  collapsed start-collapsed "><a href="/news" title="" id="dhtml_menu-1509">Resources</a>
+          <ul class="menu">
+          <li class="leaf first dhtml-menu "><a href="/news" title="News" id="dhtml_menu-692">News</a></li>
+          <li class="leaf  dhtml-menu "><a href="/library" title="Library" id="dhtml_menu-370">Library</a></li>
+          <li class="leaf  dhtml-menu "><a href="/research" title="Research" id="dhtml_menu-368">Research</a></li>
+          <li class="leaf  dhtml-menu "><a href="/press" title="For the press" id="dhtml_menu-1511">For the press</a></li>
+          <li class="leaf last dhtml-menu "><a href="/questions" title="" id="dhtml_menu-1525">FAQ</a></li>
+          </ul>
+        </li>
+        --> 
+        </ul>
+
+          <div id="login">
+            <% if user_signed_in? %>
+              Logged in as <%= content_tag :strong, current_user.email %>.
+              <%= link_to "Edit profile", edit_user_registration_path %> | 
+              <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+            <% else %>
+              <%= link_to "Sign Up", new_user_registration_path %> | 
+              <%= link_to "Login", new_user_session_path %>
+            <% end %>
+            <% flash.each do |key, value| %>
+              <%= content_tag :div, value, :class => "flash #{key}" %>
+            <% end %>
+          </div><!-- end #login -->
+        </div><!-- end #leftnav -->
+
+        <div id="main">
+
+          <%= yield %>
+
+          <div id="footer">
+            <div id="copyright">
+            <p>&copy; 2007–2011 California Horticultural Invasives Prevention (Cal-HIP)</p>
+            </div>
+
+            <div id="footernav">
+            <p><a href="/contact/plantright">Contact Us</a> &nbsp;|&nbsp;  <a href="/contact/website">Website feedback</a>  &nbsp;|&nbsp;   Site by <a href="http://ignoredbydinosaurs.com">IBD</a> and <a href="http://filadesign.com">FILA Design</a></p>
+            </div>
+          </div><!-- end #footer -->	
+
+        </div><!-- end #main -->
+      </div><!-- end #page -->
+    </div><!-- end prContainer -->
+  </div><!-- end prWrapper -->
+
+
+
+
 
 </body>
 </html>
