@@ -4,6 +4,8 @@
 <% @users.each do |user| %>
   <tr>
     <td><%= mail_to user.email %></td>
+    <td><%= "Admin" if user.admin? %></td>
+    <td><%= link_to "edit user", edit_user_registration_path %></td>
   </tr>
 <% end %>
 </table>
