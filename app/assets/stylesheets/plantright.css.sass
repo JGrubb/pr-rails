@@ -27,10 +27,18 @@ h1, h2, h3, h4, h5
   clear: left
 
 .flash
-  padding: 0.5em
+  padding: 0.75em
   @include radius(3px)
-  .alert
-    
+  &.alert
+    border: 1px solid yellow
+    background-color: ivory
+  &.error
+    border: 1px solid red
+    background-color: pink
+  &.message, &.notice
+    border: 1px solid green
+    background-color: #f3ffe0 
+
 p
   line-height: 1.5
   margin: 1em 0
