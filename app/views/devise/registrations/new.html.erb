@@ -1,16 +1,21 @@
 <h2>Sign up</h2>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+  <%= f.input :email %>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+  <%= f.input :password %>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+  <%= f.input :password_confirmation %>
+
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.association :role, :label => "Choose one" %>
+  
+  <div>
+    
+  </div>
 
   <div><%= f.submit "Sign up" %></div>
 <% end %>
