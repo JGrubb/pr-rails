@@ -7,7 +7,9 @@
   <%= f.input :password, :autocomplete => "off", :label => '<i>(leave blank if you don\'t want to change it)</i>' %>
   <%= f.input :password_confirmation %>
   <%= f.input :current_password, :label => '<i>(we need your current password to confirm your changes)</i>' %>
-  <div><%= f.button :submit %></div>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.button :submit %>
 <% end %>
 
 <h3>Cancel my account</h3>
