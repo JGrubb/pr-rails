@@ -15,8 +15,11 @@ class User < ActiveRecord::Base
   belongs_to :role
 
   def must_be_valid_role
-    @roles = Role.all
-    unless @roles.include?(role_id)
+    roles = []
+    Role.all.each do |r|
+      roles.push r.id
+    end
+    unless roles.include?(role_id)
       errors.add :role_id, "must be one of the values from the list"
     end
   end
