@@ -64,7 +64,7 @@
 
           <div id="login">
             <% if user_signed_in? %>
-              Logged in as <%= content_tag :strong, truncate(current_user.email, :length => 21, :omission => "") %> 
+              Logged in as <%= content_tag :strong, "#{current_user.first_name} #{current_user.last_name}" %><br /> 
               <%= link_to "Edit profile", edit_user_registration_path %> | 
               <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
             <% else %>

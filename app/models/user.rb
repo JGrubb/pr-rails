@@ -9,9 +9,9 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :role_id
 
   validates :first_name, :last_name, :presence => true
-  validates :role_id, :on => :create
-  validate :must_be_valid_role
-  
+  validate :must_be_valid_role, :on => :create
+  validates_uniqueness_of :role_id, :on => :create
+
   belongs_to :role
 
   def must_be_valid_role
