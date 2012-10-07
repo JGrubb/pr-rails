@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   validates_presence_of :role_id, :on => :create
 
   belongs_to :role
+  has_many :retailers
 
   def must_be_valid_role
     roles = []

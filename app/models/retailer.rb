@@ -19,7 +19,9 @@ class Retailer < ActiveRecord::Base
   serialize :educational_content_staff
   serialize :educational_content_customers
   serialize :invasives_in_past_year
-            
+
+  belongs_to :user
+
   EDUCATIONAL_CONTENT = [
    'Print materials and handouts',
    'Online materials and handouts',
