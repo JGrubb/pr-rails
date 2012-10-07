@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  training_frequency: MyString
+  motivation_with_program: MyString
+  informed_of_invasives: MyString
+  do_not_buy_list: false
+  customer_inquiry_frequency: MyString
+  biggest_challenge: MyText
+  educational_content_staff: MyString
+  educational_content_customers: MyString
+  invasives_in_past_year: MyString
+  partnership_gain: MyText
+  educational_importance: MyString
+
+two:
+  name: MyString
+  training_frequency: MyString
+  motivation_with_program: MyString
+  informed_of_invasives: MyString
+  do_not_buy_list: false
+  customer_inquiry_frequency: MyString
+  biggest_challenge: MyText
+  educational_content_staff: MyString
+  educational_content_customers: MyString
+  invasives_in_past_year: MyString
+  partnership_gain: MyText
+  educational_importance: MyString
