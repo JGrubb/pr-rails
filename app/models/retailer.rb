@@ -20,13 +20,21 @@ class Retailer < ActiveRecord::Base
   serialize :educational_content_customers
   serialize :invasives_in_past_year
             
-  EDUCATIONAL_CONTENT = {
-   1 => 'Print materials and handouts',
-   2 => 'Online materials and handouts',
-   3 => 'Online videos',
-   4 => 'Live workshops',
-   5 => 'Online training and webinars'
-  }
+  EDUCATIONAL_CONTENT = [
+   'Print materials and handouts',
+   'Online materials and handouts',
+   'Online videos',
+   'Live workshops',
+   'Online training and webinars'
+  ]
+  
+#  EDUCATIONAL_CONTENT = {
+#   1 => 'Print materials and handouts',
+#   2 => 'Online materials and handouts',
+#   3 => 'Online videos',
+#   4 => 'Live workshops',
+#   5 => 'Online training and webinars'
+#  }
 
   CUSTOMER_INQUIRY_OPTIONS = [
     'More than once a week',
@@ -49,13 +57,13 @@ class Retailer < ActiveRecord::Base
     'Very much so, and the same is true for our customers'
   ]
 
-  INVASIVES_OPTIONS = {
-    1 => "Brooms (Bridal veil, French, Spanish, Scotch, Portugese)",
-    2 => "Green Fountain Grass",
-    3 => "Pampas Grass",
-    4 => "Periwinkle (Vinca major)",
-    5 => "Highway Iceplant"
-  }
+  INVASIVES_OPTIONS = [
+    "Brooms (Bridal veil, French, Spanish, Scotch, Portugese)",
+    "Green Fountain Grass",
+    "Pampas Grass",
+    "Periwinkle (Vinca major)",
+    "Highway Iceplant"
+  ]
   
   INFORMED_OPTIONS = [
     'Very informed',
