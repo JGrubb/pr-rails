@@ -8,8 +8,8 @@ class CreateRetailers < ActiveRecord::Migration
       t.boolean :do_not_buy_list
       t.string :customer_inquiry_frequency
       t.text :biggest_challenge
-      t.string :educational_content_staff
-      t.string :educational_content_customers
+      t.text :educational_content_staff
+      t.text :educational_content_customers
       t.string :invasives_in_past_year
       t.text :partnership_gain
       t.string :educational_importance

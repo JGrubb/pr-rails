@@ -781,7 +781,7 @@ hr {
 
 abbr[title] {
   cursor: help;
-  border-bottom: 1px dotted #999999;
+  /*border-bottom: 1px dotted #999999;*/
 }
 
 abbr.initialism {

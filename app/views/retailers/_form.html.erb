@@ -1,0 +1,32 @@
+<%= simple_form_for(@retailer, 
+                    :html => { :class => "form-vertical retailer-form" }, 
+                    :defaults => { :input_html => { :class => "input-xlarge" } }) do |f| %>
+
+  <%= f.input :name %>
+  <%= f.input :number_of_stores, :input_html => { :class => "input-small" } %>
+  <%= f.input :training_frequency, :collection => Retailer::TRAINING_FREQUENCY_OPTIONS, 
+              :label => "How often does your store set aside dedicated time for staff education or training?" %>
+  <%= f.input :motivation_with_program, :collection => Retailer::MOTIVATION_OPTIONS, 
+              :label => "Does 'doing right by the environment' motivate your staff?" %>
+  <%= f.input :informed_of_invasives, :collection => Retailer::INFORMED_OPTIONS,
+              :label => "How informed is your staff about the issue of invasive plants?" %>
+  <label>What form of educational content (about invasive plants) would be most valued by your staff?</label>
+  <%= f.collection_check_boxes :educational_content_staff, Retailer::EDUCATIONAL_CONTENT, :first, :last, :prompt => true %>
+  <label>Does your business have a "do-not-buy" plant list?</label>
+  <div class="radios">
+    <%= f.collection_radio_buttons :do_not_buy_list, [[true, "Yes"], [false, "No"]], :first, :last, :label => "Does your business have a \"do-not-buy\" plant list?" %>
+  </div>
+  <div class="clear">
+  <%= f.input :customer_inquiry_frequency, :collection => Retailer::CUSTOMER_INQUIRY_OPTIONS, :label => "How often do customers ask for plants like periwinkle (Vinca major), green fountain grass (Pennisetum setaceum), pampas grass (Cortaderial selloana) and varieties of broom plants that are invasive in CA?" %></div>
+  <%= f.input :biggest_challenge, :label => "What is your store's biggest challenge regarding invasive plants?", :input_html => { :rows => "5", :class => "input-xxlarge" } %>
+  <label>What form of educational content (about invasive plants) would be most valued by your customers?</label>
+  <%= f.collection_check_boxes :educational_content_customers, Retailer::EDUCATIONAL_CONTENT, :first, :last, :class => "checkboxes" %>
+  
+  <label>Have you carried any of the following plants in the past 12-months?</label>
+  <%= f.collection_check_boxes :invasives_in_past_year, Retailer::INVASIVES_OPTIONS, :first, :last, :class => "checkboxes" %>
+  <%= f.input :partnership_gain, :label => "What would you and your business most like to gain from your PlantRight partnership?", :input_html => { :rows => "5", :class => "input-xxlarge" }%>
+  <%= f.input :educational_importance, :collection => Retailer::EDUCATIONAL_IMPORTANCE_OPTIONS, :label => "How important is it to educate 100% of your sales staff about invasive plants?" %>
+  <div class="clear">
+    <%= f.button :submit, :class => "btn-primary" %>
+  </div>
+<% end %>

@@ -11,4 +11,9 @@
  *= require_self
  *= require bootstrap.css
  *= require plantright.css.sass
+ *= require retailers.css.sass
  */
+
+.clear {
+  clear: both;
+}

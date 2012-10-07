@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121007111158) do
+ActiveRecord::Schema.define(:version => 20121007114824) do
 
   create_table "pages", :force => true do |t|
     t.string    "title"
@@ -29,13 +29,14 @@ ActiveRecord::Schema.define(:version => 20121007111158) do
     t.boolean  "do_not_buy_list"
     t.string   "customer_inquiry_frequency"
     t.text     "biggest_challenge"
-    t.string   "educational_content_staff"
-    t.string   "educational_content_customers"
+    t.text     "educational_content_staff"
+    t.text     "educational_content_customers"
     t.string   "invasives_in_past_year"
     t.text     "partnership_gain"
     t.string   "educational_importance"
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
+    t.integer  "number_of_stores"
   end
 
   create_table "roles", :force => true do |t|
