@@ -1,4 +1,18 @@
 PrRails::Application.routes.draw do
+  get "retailers/index"
+
+  get "retailers/new"
+
+  get "retailers/create"
+
+  get "retailers/edit"
+
+  get "retailers/update"
+
+  get "retailers/show"
+
+  get "retailers/destroy"
+
   resources :roles
 
   resources :pages, :except => [:show, :update]
