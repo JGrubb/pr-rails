@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
 
   validates :first_name, :last_name, :presence => true
   validate :must_be_valid_role, :on => :create
-  validates_uniqueness_of :role_id, :on => :create
+  validates_presence_of :role_id, :on => :create
 
   belongs_to :role
 
