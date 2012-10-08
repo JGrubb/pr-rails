@@ -1,11 +1,16 @@
 class Retailer < ActiveRecord::Base
+
+  belongs_to :user
+  has_many :locations
+  accepts_nested_attributes_for :locations
+
   attr_accessible :biggest_challenge, :customer_inquiry_frequency, 
                   :do_not_buy_list, :educational_content_customers, 
                   :educational_content_staff, :educational_importance, 
                   :informed_of_invasives, :invasives_in_past_year, 
                   :motivation_with_program, :name, 
                   :partnership_gain, :training_frequency,
-                  :number_of_stores
+                  :number_of_stores, :locations_attributes
 
   validates :biggest_challenge, :customer_inquiry_frequency, 
             :do_not_buy_list, :educational_content_customers, 
@@ -20,7 +25,12 @@ class Retailer < ActiveRecord::Base
   serialize :educational_content_customers
   serialize :invasives_in_past_year
 
-  belongs_to :user
+# Gets rid of weird blank string in serialized array.
+  before_validation do |model|
+    model.educational_content_staff.reject!(&:empty?) if model.educational_content_staff
+    model.educational_content_customers.reject!(&:empty?) if model.educational_content_customers
+    model.invasives_in_past_year.reject!(&:empty?) if model.invasives_in_past_year
+  end
 
   EDUCATIONAL_CONTENT = [
    'Print materials and handouts',
@@ -30,14 +40,6 @@ class Retailer < ActiveRecord::Base
    'Online training and webinars'
   ]
   
-#  EDUCATIONAL_CONTENT = {
-#   1 => 'Print materials and handouts',
-#   2 => 'Online materials and handouts',
-#   3 => 'Online videos',
-#   4 => 'Live workshops',
-#   5 => 'Online training and webinars'
-#  }
-
   CUSTOMER_INQUIRY_OPTIONS = [
     'More than once a week',
     'More than once a month',

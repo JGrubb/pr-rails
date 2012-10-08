@@ -3,7 +3,9 @@ PrRails::Application.routes.draw do
 
   resources :pages, :except => [:show, :update]
 
-  resources :retailers
+  resources :retailers do
+    resources :locations
+  end
 
   devise_for :users, :path_names => { :sign_in => "login", :sign_out => "logout" }
   get 'users', :to => 'users#index'

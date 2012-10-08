@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121008105328) do
+ActiveRecord::Schema.define(:version => 20121008110620) do
 
   create_table "locations", :force => true do |t|
     t.string   "address1"
@@ -20,9 +20,12 @@ ActiveRecord::Schema.define(:version => 20121008105328) do
     t.string   "state"
     t.string   "zip"
     t.string   "phone"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "retailer_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
+
+  add_index "locations", ["retailer_id"], :name => "retailer_id_index"
 
   create_table "pages", :force => true do |t|
     t.string    "title"
@@ -50,6 +53,8 @@ ActiveRecord::Schema.define(:version => 20121008105328) do
     t.integer  "number_of_stores"
     t.integer  "user_id"
   end
+
+  add_index "retailers", ["user_id"], :name => "user_id_index"
 
   create_table "roles", :force => true do |t|
     t.string   "name"
