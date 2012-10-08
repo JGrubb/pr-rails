@@ -1,2 +1,14 @@
-<h1>Retailers#index</h1>
-<p>Find me in app/views/retailers/index.html.erb</p>
+<h2>All Retailers</h2>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Registered by</th>
+  </tr>
+<% @retailers.each do |r| %>
+  <tr>
+    <td><%= link_to r.name, r %></td>
+    <td><%= r.user.full_name %></td>
+  </tr>
+<% end %>
+</table>

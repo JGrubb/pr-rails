@@ -37,8 +37,7 @@ ActiveRecord::Schema.define(:version => 20121007210701) do
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
     t.integer  "number_of_stores"
-    t.integer  "updated_by"
-    t.integer  "created_by"
+    t.integer  "user_id"
   end
 
   create_table "roles", :force => true do |t|

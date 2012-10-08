@@ -1,6 +1,6 @@
 class RetailersController < ApplicationController
   def index
-    @retailers = Retailer.all
+    @retailers = Retailer.includes(:user).all
   end
 
   def new
@@ -9,7 +9,7 @@ class RetailersController < ApplicationController
 
   def create
     @retailer = Retailer.new(params[:retailer])
-    @retailer.created_by = current_user.id
+    @retailer.user_id = current_user.id
     if @retailer.save!
       redirect_to retailer_path(@retailer)
     else
@@ -23,7 +23,6 @@ class RetailersController < ApplicationController
 
   def update
     @retailer = Retailer.find(params[:id])
-    @retailer.updated_by = current_user.id
     if @retailer.update_attributes params[:retailer]
       redirect_to @retailer
     else
