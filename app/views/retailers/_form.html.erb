@@ -1,3 +1,8 @@
+<ul>
+<% @retailer.errors.each do |err| %>
+  <li><%= err %></li>
+<% end %>
+</ul>
 <%= simple_form_for(@retailer, 
                     :html => { :class => "form-vertical retailer-form" }, 
                     :defaults => { :input_html => { :class => "input-xlarge" } }) do |f| %>
@@ -10,8 +15,12 @@
               :label => "Does 'doing right by the environment' motivate your staff?" %>
   <%= f.input :informed_of_invasives, :collection => Retailer::INFORMED_OPTIONS,
               :label => "How informed is your staff about the issue of invasive plants?" %>
+  
   <label>What form of educational content (about invasive plants) would be most valued by your staff?</label>
   <%= f.collection_check_boxes :educational_content_staff, Retailer::EDUCATIONAL_CONTENT, :to_s, :to_s, :prompt => true %>
+  <label class="indent">Other</label>
+  <%= text_field_tag "retailer[educational_content_staff][]", @retailer.ecs_other, :class => "input-xlarge" %>
+
   <label>Does your business have a "do-not-buy" plant list?</label>
   <div class="radios">
     <%= f.collection_radio_buttons :do_not_buy_list, [[true, "Yes"], [false, "No"]], :first, :last, :label => "Does your business have a \"do-not-buy\" plant list?" %>
@@ -27,6 +36,9 @@
   <%= f.collection_check_boxes :invasives_in_past_year, Retailer::INVASIVES_OPTIONS, :to_s, :to_s, :prompt => true %>
   <%= f.input :partnership_gain, :label => "What would you and your business most like to gain from your PlantRight partnership?", :input_html => { :rows => "5", :class => "input-xxlarge" }%>
   <%= f.input :educational_importance, :collection => Retailer::EDUCATIONAL_IMPORTANCE_OPTIONS, :label => "How important is it to educate 100% of your sales staff about invasive plants?" %>
+
+  <%= render 'locations_fields', :f => f %>
+
   <div class="clear">
     <%= f.button :submit, :class => "btn-primary" %>
   </div>

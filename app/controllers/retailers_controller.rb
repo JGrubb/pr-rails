@@ -5,6 +5,7 @@ class RetailersController < ApplicationController
 
   def new
     @retailer = Retailer.new
+    1.times { @retailer.locations.build }
   end
 
   def create
@@ -19,6 +20,7 @@ class RetailersController < ApplicationController
 
   def edit
     @retailer = Retailer.find(params[:id])
+    @retailer.locations.build
   end
 
   def update

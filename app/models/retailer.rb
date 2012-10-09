@@ -2,7 +2,7 @@ class Retailer < ActiveRecord::Base
 
   belongs_to :user
   has_many :locations
-  accepts_nested_attributes_for :locations
+  accepts_nested_attributes_for :locations, :allow_destroy => true
 
   attr_accessible :biggest_challenge, :customer_inquiry_frequency, 
                   :do_not_buy_list, :educational_content_customers, 
@@ -80,5 +80,12 @@ class Retailer < ActiveRecord::Base
     "Somewhat important",
     "Not important"
   ]
-  
+
+  def ecs_other
+    if EDUCATIONAL_CONTENT.include?(self.educational_content_staff.last)
+      nil
+    else
+      self.educational_content_staff.last
+    end
+  end
 end
