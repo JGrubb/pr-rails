@@ -26,6 +26,10 @@ class User < ActiveRecord::Base
   end
 
   def full_name
-    "#{first_name} #{last_name}"
+    if first_name.nil? || last_name.nil?
+      "Please edit your profile details."
+    else
+      "#{first_name} #{last_name}"
+    end
   end
 end
