@@ -20,7 +20,6 @@ class RetailersController < ApplicationController
 
   def edit
     @retailer = Retailer.find(params[:id])
-    @retailer.locations.build
   end
 
   def update

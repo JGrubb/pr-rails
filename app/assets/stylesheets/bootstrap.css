@@ -3058,6 +3058,7 @@ button.close {
           box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
+
 .btn:hover,
 .btn:active,
 .btn.active,
@@ -3169,6 +3170,12 @@ input[type="button"].btn-block {
   width: 100%;
 }
 
+a.btn-primary.active,
+a.btn-warning.active,
+a.btn-danger.active,
+a.btn-success.active,
+a.btn-info.active,
+a.btn-inverse.active,
 .btn-primary.active,
 .btn-warning.active,
 .btn-danger.active,
@@ -3183,6 +3190,7 @@ input[type="button"].btn-block {
   border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);
 }
 
+a.btn-primary,
 .btn-primary {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
@@ -3215,6 +3223,7 @@ input[type="button"].btn-block {
   background-color: #003399 \9;
 }
 
+a.btn-warning,
 .btn-warning {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
@@ -3247,6 +3256,7 @@ input[type="button"].btn-block {
   background-color: #c67605 \9;
 }
 
+a.btn-danger,
 .btn-danger {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
@@ -3279,6 +3289,7 @@ input[type="button"].btn-block {
   background-color: #942a25 \9;
 }
 
+a.btn-success,
 .btn-success {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
@@ -3311,8 +3322,9 @@ input[type="button"].btn-block {
   background-color: #408140 \9;
 }
 
+a.btn-info,
 .btn-info {
-  color: #ffffff;
+  color: #ffffff !important;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #49afcd;
   *background-color: #2f96b4;
@@ -3343,6 +3355,7 @@ input[type="button"].btn-block {
   background-color: #24748c \9;
 }
 
+a.btn-inverse,
 .btn-inverse {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);

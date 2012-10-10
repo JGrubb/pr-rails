@@ -5,4 +5,6 @@
 $ ->
   $('.state-select option[value="CA"]').attr
     'selected': 'selected'
+
+  $('.retailer-form').nestedFields()
     
