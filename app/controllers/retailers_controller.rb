@@ -1,4 +1,7 @@
 class RetailersController < ApplicationController
+  
+  before_filter :require_manager, :except => [:index, :show]
+
   def index
     @retailers = Retailer.includes(:user).all
   end

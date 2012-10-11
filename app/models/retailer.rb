@@ -82,7 +82,9 @@ class Retailer < ActiveRecord::Base
   ]
 
   def ecs_other
-    if EDUCATIONAL_CONTENT.include?(self.educational_content_staff.last)
+    if self.educational_content_staff.nil?
+      ''
+    elsif EDUCATIONAL_CONTENT.include?(self.educational_content_staff.last)
       nil
     else
       self.educational_content_staff.last

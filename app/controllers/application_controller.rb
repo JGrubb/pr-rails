@@ -10,4 +10,13 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
   end
+
+  def require_manager
+    authenticate_user!
+    unless current_user.admin? || current_user.roles == "manager"
+      flash[:alert] = "You must be a nursery manager to access this action"
+      redirect_to root_path
+    end
+  end
+  
 end
