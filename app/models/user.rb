@@ -6,22 +6,17 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :role_id
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :role
 
   validates :first_name, :last_name, :presence => true
   validate :must_be_valid_role, :on => :create
-  validates_presence_of :role_id, :on => :create
+  validates_presence_of :role, :on => :create
 
-  belongs_to :role
   has_many :retailers
 
   def must_be_valid_role
-    roles = []
-    Role.all.each do |r|
-      roles.push r.id
-    end
-    unless roles.include?(role_id)
-      errors.add :role_id, "must be one of the values from the list"
+    unless ROLE_OPTIONS.include?(role)
+      errors.add :role, "must be one of the values from the list"
     end
   end
 
@@ -32,4 +27,9 @@ class User < ActiveRecord::Base
       "#{first_name} #{last_name}"
     end
   end
+
+  ROLE_OPTIONS = [
+    'Retailer Manager',
+    'Retailer Employee'
+  ]  
 end
