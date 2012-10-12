@@ -14,75 +14,75 @@
 ActiveRecord::Schema.define(:version => 20121008110620) do
 
   create_table "locations", :force => true do |t|
-    t.string    "address1"
-    t.string    "address2"
-    t.string    "city"
-    t.string    "state"
-    t.string    "zip"
-    t.string    "phone"
-    t.integer   "retailer_id"
-    t.timestamp "created_at",  :null => false
-    t.timestamp "updated_at",  :null => false
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "phone"
+    t.integer  "retailer_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   add_index "locations", ["retailer_id"], :name => "retailer_id_index"
 
   create_table "pages", :force => true do |t|
-    t.string    "title"
-    t.text      "body"
-    t.string    "permalink"
-    t.timestamp "created_at", :null => false
-    t.timestamp "updated_at", :null => false
+    t.string   "title"
+    t.text     "body"
+    t.string   "permalink"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "retailers", :force => true do |t|
-    t.string    "name"
-    t.string    "training_frequency"
-    t.string    "motivation_with_program"
-    t.string    "informed_of_invasives"
-    t.boolean   "do_not_buy_list"
-    t.string    "customer_inquiry_frequency"
-    t.text      "biggest_challenge"
-    t.text      "educational_content_staff"
-    t.text      "educational_content_customers"
-    t.string    "invasives_in_past_year"
-    t.text      "partnership_gain"
-    t.string    "educational_importance"
-    t.timestamp "created_at",                    :null => false
-    t.timestamp "updated_at",                    :null => false
-    t.integer   "number_of_stores"
-    t.integer   "user_id"
+    t.string   "name"
+    t.string   "training_frequency"
+    t.string   "motivation_with_program"
+    t.string   "informed_of_invasives"
+    t.boolean  "do_not_buy_list"
+    t.string   "customer_inquiry_frequency"
+    t.text     "biggest_challenge"
+    t.text     "educational_content_staff"
+    t.text     "educational_content_customers"
+    t.string   "invasives_in_past_year"
+    t.text     "partnership_gain"
+    t.string   "educational_importance"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.integer  "number_of_stores"
+    t.integer  "user_id"
   end
 
   add_index "retailers", ["user_id"], :name => "user_id_index"
 
   create_table "roles", :force => true do |t|
-    t.string    "name"
-    t.timestamp "created_at", :null => false
-    t.timestamp "updated_at", :null => false
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
-    t.string    "email",                  :default => "",    :null => false
-    t.string    "encrypted_password",     :default => "",    :null => false
-    t.string    "reset_password_token"
-    t.timestamp "reset_password_sent_at"
-    t.timestamp "remember_created_at"
-    t.integer   "sign_in_count",          :default => 0
-    t.timestamp "current_sign_in_at"
-    t.timestamp "last_sign_in_at"
-    t.string    "current_sign_in_ip"
-    t.string    "last_sign_in_ip"
-    t.string    "confirmation_token"
-    t.timestamp "confirmed_at"
-    t.timestamp "confirmation_sent_at"
-    t.string    "unconfirmed_email"
-    t.timestamp "created_at",                                :null => false
-    t.timestamp "updated_at",                                :null => false
-    t.boolean   "admin",                  :default => false
-    t.integer   "role_id"
-    t.string    "first_name"
-    t.string    "last_name"
+    t.string   "email",                  :default => "",    :null => false
+    t.string   "encrypted_password",     :default => "",    :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
+    t.boolean  "admin",                  :default => false
+    t.integer  "role_id"
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
