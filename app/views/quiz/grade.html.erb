@@ -1,0 +1,9 @@
+<% if current_user.verified %>
+
+<h3>You passed.   </h3>
+
+<% else %>
+
+<h3>Sorry Charlie... you should crack the books before you <%= link_to "try again", quiz_path %>.</h3>
+
+<% end %>

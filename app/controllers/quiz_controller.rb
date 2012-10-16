@@ -10,6 +10,6 @@ class QuizController < ApplicationController
   def grade
   	quiz = Quiz.new(params[:quiz])
   	quiz.grade
-  	current_user.update_attribute(:has_passed_quiz, quiz.passed?)
+  	current_user.update_attribute(:verified, quiz.passed?)
   end
 end

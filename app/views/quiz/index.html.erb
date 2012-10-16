@@ -1,6 +1,6 @@
 <h3>The quiz</h3>
 
-<% form_for :quiz, :url => :grade_quiz do |form| %>
+<%= form_tag '/quiz' do %>
 
 <%= generate_quiz(@questions, @choices) %>
 <br />

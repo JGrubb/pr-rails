@@ -1,10 +1,14 @@
 PrRails::Application.routes.draw do
-  resources :roles
 
   resources :pages, :except => [:show, :update]
 
   resources :retailers do
     resources :locations
+  end
+
+  controller :quizzes do
+    get 'quiz', :to => 'quiz#index'
+    post 'quiz', :to => 'quiz#grade', :as => :grade_quiz
   end
 
   devise_for :users, :path_names => { :sign_in => "login", :sign_out => "logout" }
