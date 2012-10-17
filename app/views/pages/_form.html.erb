@@ -17,13 +17,13 @@
   </div>
   <div class="field">
     <%= f.label :body %><br />
-    <%= f.text_area :body %>
+    <%= f.text_area :body, :class => "input-xxlarge" %>
   </div>
   <div class="field">
-    <%= f.label :permalink %><br />
+    <%= f.label :permalink, "permalink (the URL)" %><br />
     <%= f.text_field :permalink %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => "btn btn-primary" %>
   </div>
 <% end %>
