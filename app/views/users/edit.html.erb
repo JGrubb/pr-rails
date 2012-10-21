@@ -1,0 +1,9 @@
+<%= simple_form_for @user, class: "form-vertical" do |f| %>
+  
+  <h3><%= @user.full_name %></h3>
+  <%= mail_to @user.email, @user.email %>
+  <%= f.input :role, collection: User::ROLE_OPTIONS %>
+  <%= f.input :admin, inline_label: "Admin?", label: false %>
+  <%= debug @user %>
+  <%= f.button :submit, input_html: "btn btn-primary" %>
+<% end %>
