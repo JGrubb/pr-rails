@@ -11,8 +11,13 @@ PrRails::Application.routes.draw do
     post 'quiz', :to => 'quiz#grade', :as => :grade_quiz
   end
 
-  devise_for :users, :path_names => { :sign_in => "login", :sign_out => "logout" }
-  get 'users', :to => 'users#index'
+  devise_for :users, path_names: { :sign_in => "login", :sign_out => "logout" }
+  controller 'users' do
+    get 'users', to: 'users#index'
+    get 'users/:id', to: 'users#show', as: :user
+    get 'users/:id/edit', to: 'users#edit', as: :user_edit
+    put 'users/:id', to: 'users#update'
+  end
   get ':id', :to => 'pages#show', :as => :page
   put ':id', :to => 'pages#update', :as => :page
   # The priority is based upon order of creation:
