@@ -14,10 +14,14 @@ PrRails::Application.routes.draw do
   devise_for :users, path_names: { :sign_in => "login", :sign_out => "logout" }
   controller 'users' do
     get 'users', to: 'users#index'
+    get 'users/admins', to: 'users#admins', as: :admin_users
+    get 'users/managers', to: 'users#managers', as: :manager_users
+    get 'users/employees', to: 'users#employees', as: :employee_users
     get 'users/:id', to: 'users#show', as: :user
     get 'users/:id/edit', to: 'users#edit', as: :user_edit
     put 'users/:id', to: 'users#update'
   end
+
   get ':id', :to => 'pages#show', :as => :page
   put ':id', :to => 'pages#update', :as => :page
   # The priority is based upon order of creation:
