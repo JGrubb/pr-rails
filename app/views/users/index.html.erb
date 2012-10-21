@@ -1,6 +1,11 @@
 <h2 class="pagetitle">Users</h2>
 
-<table>
+<table class="table">
+  <tr>
+    <th>User</th>
+    <th>role</th>
+    <th></th>
+  </tr>
 <% @users.each do |user| %>
   <tr>
     <td><%= mail_to user.email %></td>
