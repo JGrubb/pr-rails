@@ -1,5 +1,5 @@
 class Page < ActiveRecord::Base
-  attr_accessible :body, :permalink, :title
+  attr_accessible :body, :permalink, :title, :protected
 
   validates :permalink, :uniqueness => true
 
