@@ -24,4 +24,11 @@ module ApplicationHelper
     current_user && !current_user.admin?
   end
 
+  def manager?
+    current_user.role == User::ROLE_OPTIONS[0]
+  end 
+
+  def employee?
+    current_user.role == USER::ROLE_OPTIONS[1]
+  end
 end
