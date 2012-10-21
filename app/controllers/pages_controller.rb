@@ -15,10 +15,21 @@ class PagesController < ApplicationController
   # GET /pages/1.json
   def show
     @page = Page.find_by_permalink!(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @page }
+    unless @page.protected?
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @page }
+      end
+    else
+      if current_user.verified?
+        respond_to do |format|
+          format.html # show.html.erb
+          format.json { render json: @page }
+        end
+      else
+        flash[:alert] = "You must verify with the program before accessing that page"
+        redirect_to root_path
+      end
     end
   end
 

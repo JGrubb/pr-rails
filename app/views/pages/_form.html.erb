@@ -1,4 +1,4 @@
-<%= form_for(@page) do |f| %>
+<%= simple_form_for(@page) do |f| %>
   <% if @page.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@page.errors.count, "error") %> prohibited this page from being saved:</h2>
@@ -11,19 +11,10 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :body %><br />
-    <%= f.text_area :body, :class => "input-xxlarge" %>
-  </div>
-  <div class="field">
-    <%= f.label :permalink, "permalink (the URL)" %><br />
-    <%= f.text_field :permalink %>
-  </div>
-  <div class="actions">
-    <%= f.submit :class => "btn btn-primary" %>
-  </div>
+    <%= f.input :title %>
+    <%= f.input :body, :input_html => { :class => "input-xxlarge" } %>
+    <%= f.input :permalink, :label => "permalink (the URL)" %><br />
+    <%= f.input :protected, :inline_label => "Protected?", :label => false %>
+
+    <%= f.button :submit, :class => "btn btn-primary" %>
 <% end %>

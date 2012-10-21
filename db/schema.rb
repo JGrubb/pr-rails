@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121016105718) do
+ActiveRecord::Schema.define(:version => 20121021104812) do
 
   create_table "locations", :force => true do |t|
     t.string    "address1"
@@ -31,8 +31,9 @@ ActiveRecord::Schema.define(:version => 20121016105718) do
     t.string    "title"
     t.text      "body"
     t.string    "permalink"
-    t.timestamp "created_at", :null => false
-    t.timestamp "updated_at", :null => false
+    t.timestamp "created_at",                    :null => false
+    t.timestamp "updated_at",                    :null => false
+    t.boolean   "protected",  :default => false
   end
 
   create_table "retailers", :force => true do |t|
