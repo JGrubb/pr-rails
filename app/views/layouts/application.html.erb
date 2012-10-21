@@ -9,7 +9,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render "layouts/admin_menu" %>
+  <% if admin? %>
+    <%= render "layouts/admin_menu" %>
+  <% end %>
+  <% if normal_user %>
+    <%= render "layouts/user_menu" %>
+  <% end %>
   <div id="prWrapper">
     <div id="prContainer">
       <div id="header">     

@@ -1,0 +1,9 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <ul class="nav nav-pills">
+      <% unless current_user.verified? %>
+        <%= content_tag :li, link_to("Take Quiz", quiz_path) %>
+      <% end %>
+    </ul>
+  </div>
+</div>
