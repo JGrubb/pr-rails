@@ -23,4 +23,7 @@ class ApplicationController < ActionController::Base
     authenticate_user!
   end
 
+  def admin?
+    current_user && current_user.admin?
+  end
 end

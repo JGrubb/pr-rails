@@ -16,6 +16,7 @@ module ApplicationHelper
 		ret.html_safe
 	end
 
-  
-
+  def admin?
+    current_user && current_user.admin?
+  end
 end

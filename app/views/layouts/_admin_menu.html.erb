@@ -1,7 +1,9 @@
-<div class="navbar">
-  <div class="navbar-inner">
-    <ul class="nav">
-      <%= content_tag :li, link_to("New page", new_page_path) %>     
-    </ul>
+<% if admin? %>
+  <div class="navbar">
+    <div class="navbar-inner">
+      <ul class="nav">
+        <%= content_tag :li, link_to("New page", new_page_path) %>     
+      </ul>
+    </div>
   </div>
-</div>
+<% end %>
