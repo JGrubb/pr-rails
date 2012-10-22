@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_filter :find_user, only: [:show, :edit, :update]
 
   def index
-    @users = User.all
+    @users = User.order("last_name ASC").paginate(page: params[:id])
   end
 
   def show
