@@ -17,6 +17,12 @@
           <%= content_tag :li, link_to("Employees", employee_users_path) %>
         <% end %>
       <% end %>
+      <%= content_tag :li, class: "dropdown" do %>
+        <%= link_to "Retailers admin", "#", class: "dropdown-toggle", data: { toggle: "dropdown" } %>
+        <%= content_tag :ul, class: "dropdown-menu" do %>
+          <%= content_tag :li, link_to("All retailers", retailers_path) %>
+        <% end %>
+      <% end %>
     </ul>
   </div>
 </div>

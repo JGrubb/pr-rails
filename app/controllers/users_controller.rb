@@ -26,17 +26,17 @@ class UsersController < ApplicationController
   end
 
   def admins
-    @users = User.where(:admin => true)
+    @users = User.where(:admin => true).paginate(page: params[:page])
     render :index
   end
 
   def managers
-    @users = User.of_role(User::ROLE_OPTIONS[0])
+    @users = User.of_role(User::ROLE_OPTIONS[0]).paginate(page: params[:page])
     render :index
   end
 
   def employees
-    @users = User.of_role(User::ROLE_OPTIONS[1])
+    @users = User.of_role(User::ROLE_OPTIONS[1]).paginate(page: params[:page])
     render :index
   end
 
