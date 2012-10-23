@@ -2,6 +2,8 @@
 
 <table class="table">
   <tr>
+    <th>Last name</th>
+    <th>First name</th>
     <th>User</th>
     <th>role</th>
     <th>Verified?</th>
@@ -9,6 +11,8 @@
   </tr>
 <% @users.each do |user| %>
   <tr>
+    <td><%= user.last_name %></td>
+    <td><%= user.first_name %></td>
     <td><%= mail_to user.email %></td>
     <td><%= user_role %></td>
     <td><%= current_user.verified? %></td>
@@ -16,3 +20,4 @@
   </tr>
 <% end %>
 </table>
+<%= will_paginate @users %>
