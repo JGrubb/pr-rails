@@ -45,7 +45,14 @@ class Quiz
 
 	# Grade the quiz.
 	def grade
-		@answers.each {|key, value| grade_question(key, value)} if @answers
+    @score_info = []
+		if @answers 
+      @answers.each do |key, value|
+        score = grade_question(key, value)
+        @score_info << key if score != 1
+      end
+    end
+    @score_info
 	end
 	
 	# Grade a single question

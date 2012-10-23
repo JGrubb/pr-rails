@@ -9,7 +9,9 @@ class QuizController < ApplicationController
   # This is where you will process the results
   def grade
   	quiz = Quiz.new(params[:quiz])
-  	quiz.grade
+  	score_info = quiz.grade
+    session[:grade] = Quiz::questions
   	current_user.update_attribute(:verified, quiz.passed?)
+    @wrong_answers = Quiz::questions.keys.to_a - score_info.to_a
   end
 end

@@ -1,9 +1,16 @@
+<%= debug session %>
+
 <% if current_user.verified %>
 
 <h3>You passed.   </h3>
 
 <% else %>
-
+  <ul>
+  <% @wrong_answers.each do |a| %>
+    <li><%= a %></li>
+  <% end %>
+  </ul>
+  
 <h3>Sorry Charlie... you should crack the books before you <%= link_to "try again", quiz_path %>.</h3>
 
 <% end %>
