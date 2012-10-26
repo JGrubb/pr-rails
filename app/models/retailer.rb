@@ -90,4 +90,14 @@ class Retailer < ActiveRecord::Base
       self.educational_content_staff.last
     end
   end
+
+  def ecc_other
+    if self.educational_content_customers.nil?
+      ''
+    elsif EDUCATIONAL_CONTENT.include?(self.educational_content_customers.last)
+      nil
+    else
+      self.educational_content_customers.last
+    end
+  end
 end

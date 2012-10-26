@@ -31,6 +31,8 @@
 
   <label>What form of educational content (about invasive plants) would be most valued by your customers?</label>
   <%= f.collection_check_boxes :educational_content_customers, Retailer::EDUCATIONAL_CONTENT, :to_s, :to_s, :prompt => true %>
+  <label class="indent">Other</label>
+  <%= text_field_tag "retailer[educational_content_customers][]", @retailer.ecc_other, :class => "input-xlarge" %>
 
   <label>Have you carried any of the following plants in the past 12-months?</label>
   <%= f.collection_check_boxes :invasives_in_past_year, Retailer::INVASIVES_OPTIONS, :to_s, :to_s, :prompt => true %>

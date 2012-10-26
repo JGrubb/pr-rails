@@ -1,10 +1,10 @@
 module UsersHelper
 
-  def user_role
-    if current_user.admin?
+  def user_role(user)
+    if user.admin?
       "Admin"
     else
-      current_user.role
+      user.role
     end
   end
 

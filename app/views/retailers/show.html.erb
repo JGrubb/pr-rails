@@ -1,3 +1,7 @@
 <%= debug @retailer %>
 
+<% @retailer.locations.each do |l| %>
+  <%= debug l %>
+<% end %>
+
 <%= link_to "edit", edit_retailer_path(@retailer) %>
