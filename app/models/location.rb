@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: locations
+#
+#  id          :integer          primary key
+#  address1    :string(255)
+#  address2    :string(255)
+#  city        :string(255)
+#  state       :string(255)
+#  zip         :string(255)
+#  phone       :string(255)
+#  retailer_id :integer
+#  created_at  :timestamp        not null
+#  updated_at  :timestamp        not null
+#
+
 class Location < ActiveRecord::Base
   attr_accessible :address1, :address2, :city, :phone, :state, :zip
 

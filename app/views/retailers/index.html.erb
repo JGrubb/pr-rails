@@ -3,12 +3,10 @@
 <table class="table">
   <tr>
     <th>Name</th>
-    <th>Registered by</th>
   </tr>
 <% @retailers.each do |r| %>
   <tr>
     <td><%= link_to r.name, r %></td>
-    <td><%= link_to r.user.full_name, r.user %></td>
   </tr>
 <% end %>
 </table>

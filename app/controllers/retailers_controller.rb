@@ -37,6 +37,7 @@ class RetailersController < ApplicationController
 
   def show
     @retailer = Retailer.find(params[:id])
+    @created_by_user = User.find(@retailer.created_by_user)
   end
 
   def destroy
