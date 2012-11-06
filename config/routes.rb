@@ -12,6 +12,7 @@ PrRails::Application.routes.draw do
   end
 
   devise_for :users, path_names: { :sign_in => "login", :sign_out => "logout" }
+
   controller 'users' do
     get 'users', to: 'users#index'
     get 'users/admins', to: 'users#admins', as: :admin_users

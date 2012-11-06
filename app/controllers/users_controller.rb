@@ -40,6 +40,10 @@ class UsersController < ApplicationController
     render :index
   end
 
+  def add_employees
+    
+  end
+
   private
 
   def find_user
