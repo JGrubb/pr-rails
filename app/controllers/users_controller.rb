@@ -41,7 +41,8 @@ class UsersController < ApplicationController
   end
 
   def add_employees
-    
+    @user = User.new
+    @user.email = params[:email]
   end
 
   private

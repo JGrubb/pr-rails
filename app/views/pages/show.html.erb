@@ -1,7 +1,7 @@
 <div id="content">
   <h2 class="pageTitle"><%= @page.title %></div>
 
-  <div><%= simple_format @page.body %></div>
+  <div><%= render_md @page.body %></div>
 
   <% if current_user && current_user.admin? %>
     <%= link_to 'Edit', edit_page_path(@page) %> |

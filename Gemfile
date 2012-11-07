@@ -16,6 +16,7 @@ gem 'simple_form'
 gem 'awesome_nested_fields'
 gem 'will_paginate'
 gem 'annotate'
+gem 'redcarpet'
 
 # Gems used only for assets and not required
 # in production environments by default.
