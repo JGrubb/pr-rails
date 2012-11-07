@@ -15,6 +15,7 @@ class Page < ActiveRecord::Base
   attr_accessible :body, :permalink, :title, :protected
 
   validates :permalink, :uniqueness => true
+  validates :title, :body, :presence => true
 
   def to_param
     permalink

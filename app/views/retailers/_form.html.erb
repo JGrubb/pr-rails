@@ -1,8 +1,15 @@
-<ul>
-<% @retailer.errors.each do |err| %>
-  <li><%= err %></li>
+<% if @retailer.errors.any? %>
+  <div id="error_explanation">
+    <h3><%= pluralize(@retailer.errors.count, "error") %> prohibited this page from being saved:</h3>
+
+    <ul>
+    <% @retailer.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
 <% end %>
-</ul>
+
 <%= simple_form_for(@retailer, 
                     :html => { :class => "form-vertical retailer-form" }, 
                     :defaults => { :input_html => { :class => "input-xlarge" } }) do |f| %>

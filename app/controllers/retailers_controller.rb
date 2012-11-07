@@ -1,6 +1,7 @@
 class RetailersController < ApplicationController
   
   before_filter :require_manager, :except => [:index, :show]
+  before_filter :find_retailer, :only => [:show, :edit, :update, :destroy]
 
   def index
     @retailers = Retailer.includes(:user).all
@@ -14,7 +15,7 @@ class RetailersController < ApplicationController
   def create
     @retailer = Retailer.new(params[:retailer])
     @retailer.user_id = current_user.id
-    if @retailer.save!
+    if @retailer.save
       redirect_to retailer_path(@retailer)
     else
       render "new"
@@ -22,11 +23,10 @@ class RetailersController < ApplicationController
   end
 
   def edit
-    @retailer = Retailer.find(params[:id])
+
   end
 
   def update
-    @retailer = Retailer.find(params[:id])
     if @retailer.update_attributes params[:retailer]
       redirect_to @retailer
     else
@@ -36,14 +36,19 @@ class RetailersController < ApplicationController
 
 
   def show
-    @retailer = Retailer.find(params[:id])
     @created_by_user = User.find(@retailer.created_by_user)
   end
 
   def destroy
-    @retailer = Retailer.find(params[:id])
     if @retailer.destroy
       redirect_to root_path
     end
   end
+
+  private
+  
+  def find_retailer
+    @retailer = Retailer.find(params[:id])
+  end
+
 end
