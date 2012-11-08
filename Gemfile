@@ -10,7 +10,10 @@ group :development do
   gem 'sqlite3'
 end
 
-gem 'pg'
+group :production do
+  gem 'pg'
+end
+
 gem 'devise'
 gem 'simple_form'
 gem 'awesome_nested_fields'
