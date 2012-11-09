@@ -40,8 +40,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :role, :admin
 
   validates :first_name, :last_name, :presence => true, :on => :update
-  validate :must_be_valid_role, :on => :create
-  validates_presence_of :role, :on => :create
+  validate :must_be_valid_role, :on => :update
+  validates_presence_of :role, :on => :update
 
   has_and_belongs_to_many :retailers
 
@@ -60,7 +60,8 @@ class User < ActiveRecord::Base
   end
 
   ROLE_OPTIONS = [
-    'Retailer Manager',
-    'Retailer Employee'
+    'Retail Representative (owner, manager, etc.)',
+    'Retail employee (involved in plant purchasing decisions)',
+    'Retail employee (not involved with plant purchasing)'
   ]  
 end

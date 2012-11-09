@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
+include Devise
 
-  before_filter :authorize_admin!
+  before_filter :authorize_admin!, except: :invite_staff
   before_filter :find_user, only: [:show, :edit, :update]
 
   def index
@@ -40,9 +41,10 @@ class UsersController < ApplicationController
     render :index
   end
 
-  def add_employees
+  def invite_staff
     @user = User.new
-    @user.email = params[:email]
+    @user.password = Random.rand(1000000).to_s.crypt('pr')
+    @user.password_confirmation = @user.password
   end
 
   private
