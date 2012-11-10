@@ -12,6 +12,7 @@
  *= require bootstrap.css
  *= require plantright.css.sass
  *= require retailers.css.sass
+ *= require retailers_cm.css
  */
 
 .clear {
