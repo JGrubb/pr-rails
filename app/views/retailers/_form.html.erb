@@ -41,15 +41,18 @@
   <label class="indent">Other</label>
   <%= text_field_tag "retailer[educational_content_customers][]", @retailer.ecc_other, :class => "input-xlarge" %>
 
-  <label>Have you carried any of the following plants in the past 12-months?</label>
+  <label>Which of the following plants have you carried in the past 12-months?</label>
   <%= f.collection_check_boxes :invasives_in_past_year, Retailer::INVASIVES_OPTIONS, :to_s, :to_s, :prompt => true %>
   <%= f.input :partnership_gain, :label => "What would you and your business most like to gain from your PlantRight partnership?", :input_html => { :rows => "5", :class => "input-xxlarge" }%>
   <%= f.input :educational_importance, :collection => Retailer::EDUCATIONAL_IMPORTANCE_OPTIONS, :label => "How important is it to educate 100% of your sales staff about invasive plants?" %>
 
   <%= render 'locations_fields', :f => f %>
 
+  <div class="clear add_location">
+    <%= link_to "Add another location", "#", :class => "add btn btn-info btn-small" %>
+  </div>
+  
   <div class="clear">
     <%= f.button :submit, :class => "btn btn-success" %>
-    <%= link_to "Add another location", "#", :class => "add btn btn-info btn-small" %>
   </div>
 <% end %>

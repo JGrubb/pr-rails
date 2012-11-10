@@ -60,7 +60,8 @@ class Retailer < ActiveRecord::Base
    'Online materials and handouts',
    'Online videos',
    'Live workshops',
-   'Online training and webinars'
+   'Online training and webinars',
+   'Not sure'
   ]
   
   CUSTOMER_INQUIRY_OPTIONS = [
@@ -78,10 +79,10 @@ class Retailer < ActiveRecord::Base
   ]
 
   MOTIVATION_OPTIONS = [
-    'Very much so',
+    'Very much so, and the same is true for our customers',
+	'Very much so',
     'Somewhat',
-    'Not really',
-    'Very much so, and the same is true for our customers'
+    'Not really'
   ]
 
   INVASIVES_OPTIONS = [
@@ -89,7 +90,8 @@ class Retailer < ActiveRecord::Base
     "Green Fountain Grass",
     "Pampas Grass",
     "Periwinkle (Vinca major)",
-    "Highway Iceplant"
+    "Highway Iceplant",
+	"None of these"
   ]
   
   INFORMED_OPTIONS = [

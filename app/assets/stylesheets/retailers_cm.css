@@ -2,3 +2,24 @@
 form div.required label abbr	{
 	display: none;
 }
+
+form div.add_location	{
+	margin: 10px 0px;
+}
+
+form label	{
+	margin-top: 120x;
+	padding-top: 10px;
+	border-top: solid 1px #eee;
+}
+form label.indent, form label.collection_check_boxes, form label.collection_radio_buttons	{
+	margin-top: 0px;
+	padding-top: 0px;
+	border: none;
+}
+
+
+p.reqd_notice	{
+	color: #c82404;
+	
+}
