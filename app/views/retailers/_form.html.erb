@@ -11,7 +11,8 @@
 <% end %>
 
 <%= simple_form_for(@retailer, 
-                    :html => { :class => "form-vertical retailer-form" }, 
+                    :html => { :class => "form-vertical retailer-form",
+                               :id    => "new_retailer" }, 
                     :defaults => { :input_html => { :class => "input-xlarge" } }) do |f| %>
 
   <%= f.input :name %>
