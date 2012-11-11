@@ -1,11 +1,9 @@
-<h3>The quiz</h3>
+<h2>Get certified: Take the quiz</h2>
 
 <%= form_tag '/quiz' do %>
 
 <%= generate_quiz(@questions, @choices) %>
-<br />
-<br />
 
-<%= submit_tag "Submit!", :class => "btn btn-primary" %>
+<%= submit_tag "Continue", :class => "btn btn-primary" %>
 
 <% end %>

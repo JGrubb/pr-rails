@@ -1,4 +1,4 @@
-
+/* for retailers/new  */
 form div.required label abbr	{
 	display: none;
 }
@@ -12,7 +12,10 @@ form label	{
 	padding-top: 10px;
 	border-top: solid 1px #eee;
 }
-form label.indent, form label.collection_check_boxes, form label.collection_radio_buttons	{
+
+/* form-horizontal is for users/sign_up */
+form label.indent, form label.collection_check_boxes, form label.collection_radio_buttons,
+form.form-horizontal label	{
 	margin-top: 0px;
 	padding-top: 0px;
 	border: none;
@@ -23,9 +26,48 @@ p.reqd_notice	{
 	
 }
 
+
+/* for /quiz */
 form ul.quiz	{
 	margin-bottom: 12px;
 	padding-bottom: 10px;
 	border-bottom: solid 1px #eee;
+}
+
+form[action="/quiz"] p	{
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+
+/* for users/login */
+label[for=user_remember_me]	{
+	display: inline;
+	margin-top: 0px;
+	padding-top: 0px;
+	border: none;
+}
+
+
+
+/* for multiple forms */
+
+form input[type=submit]	{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+
+
+/* for anything with little bottom links */
+div#shared-links	{
+	margin-top: 12px;
+	padding-top: 10px;
+	border-top: solid 1px #eee;
+}
+
+div#shared-links a	{
+	display: block;
+	margin: 1px 0px;
 }
 	
