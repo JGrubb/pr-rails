@@ -8,7 +8,7 @@ form div.add_location	{
 }
 
 form label	{
-	margin-top: 120x;
+	margin-top: 12px;
 	padding-top: 10px;
 	border-top: solid 1px #eee;
 }
@@ -18,8 +18,14 @@ form label.indent, form label.collection_check_boxes, form label.collection_radi
 	border: none;
 }
 
-
 p.reqd_notice	{
 	color: #c82404;
 	
 }
+
+form ul.quiz	{
+	margin-bottom: 12px;
+	padding-bottom: 10px;
+	border-bottom: solid 1px #eee;
+}
+	
