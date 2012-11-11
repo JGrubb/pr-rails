@@ -40,6 +40,13 @@ form[action="/quiz"] p	{
 }
 
 
+/* for users/sign_up */
+form.form-horizontal input[type=submit]	{
+	margin-left: 180px;
+	margin-top: 0px;
+}
+
+
 /* for users/login */
 label[for=user_remember_me]	{
 	display: inline;
