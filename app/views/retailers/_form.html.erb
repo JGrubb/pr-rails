@@ -16,7 +16,7 @@
                     :defaults => { :input_html => { :class => "input-xlarge" } }) do |f| %>
 
   <%= f.input :name %>
-  <%= f.input :number_of_stores, :input_html => { :class => "input-small" } %>
+  <%= f.input :number_of_stores, :input_html => { :class => "input-small", :min => 0 } %>
   <%= f.input :training_frequency, :collection => Retailer::TRAINING_FREQUENCY_OPTIONS, 
               :label => "How often does your store set aside dedicated time for staff education or training?" %>
   <%= f.input :motivation_with_program, :collection => Retailer::MOTIVATION_OPTIONS, 
