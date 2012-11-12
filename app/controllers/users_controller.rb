@@ -52,6 +52,7 @@ include Devise
     @user = User.new(params[:user])
     @user.retailers = Retailer.where(:user_id => current_user.id).limit(1)
     @user.save
+    @user = User.last
     @user.confirm!
     @user.send_reset_password_instructions
   end
