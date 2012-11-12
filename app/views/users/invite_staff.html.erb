@@ -1,7 +1,6 @@
-<%= debug Devise::RegistrationsController.methods.sort %>
 <h3>Invite that staff</h3>
-
-<%= form_tag user_registration_path, remote: true do %>
+<%= debug @user.methods.sort %>
+<%= form_tag create_staff_path, remote: true do %>
 
   <%= hidden_field :user, :password %>
   <%= hidden_field :user, :password_confirmation %>

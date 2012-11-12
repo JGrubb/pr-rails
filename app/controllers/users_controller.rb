@@ -43,8 +43,17 @@ include Devise
 
   def invite_staff
     @user = User.new
+    @retailer = Retailer.where(:user_id => current_user.id).limit(1)
     @user.password = Random.rand(1000000).to_s.crypt('pr')
     @user.password_confirmation = @user.password
+  end
+
+  def create_staff
+    @user = User.new(params[:user])
+    @user.retailers = Retailer.where(:user_id => current_user.id).limit(1)
+    @user.save
+    @user.confirm!
+    @user.send_reset_password_instructions
   end
 
   private

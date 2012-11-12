@@ -4,7 +4,7 @@ class RetailersController < ApplicationController
   before_filter :find_retailer, :only => [:show, :edit, :update, :destroy]
 
   def index
-    @retailers = Retailer.includes(:user).all
+    @retailers = Retailer.all
   end
 
   def new
