@@ -44,17 +44,12 @@ class Retailer < ActiveRecord::Base
             :number_of_stores, 
             :presence => true 
 
-  validates :number_of_stores, :numericality => { :greater_than_or_equal_to => 1 }
+  validates :number_of_stores, :numericality => { :greater_than_or_equal_to => 1,
+                                                  :only_integer             => true }
 
   serialize :educational_content_staff
   serialize :educational_content_customers
   serialize :invasives_in_past_year
-
-  def is_positive
-    unless number_of_stores.to_i >= 1
-      errors.add :number_of_stores, "There's no such thing as a negative number of stores!"
-    end
-  end
 
 # Gets rid of weird blank string in serialized array.
   before_validation do |model|
