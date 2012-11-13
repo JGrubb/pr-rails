@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
   validate :must_be_valid_role, :on => :update
   validates_presence_of :role, :on => :update
 
-  has_and_belongs_to_many :retailers
+  belongs_to :retailer
 
   def must_be_valid_role
     unless ROLE_OPTIONS.include?(role)

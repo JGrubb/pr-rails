@@ -23,7 +23,7 @@
 
 class Retailer < ActiveRecord::Base
 
-  has_and_belongs_to_many :users
+  has_many :users
   has_many :locations
   accepts_nested_attributes_for :locations, :allow_destroy => true
 

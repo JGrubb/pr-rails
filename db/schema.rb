@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121026170151) do
+ActiveRecord::Schema.define(:version => 20121113144702) do
 
   create_table "locations", :force => true do |t|
     t.string    "address1"
@@ -57,20 +57,6 @@ ActiveRecord::Schema.define(:version => 20121026170151) do
 
   add_index "retailers", ["created_by_user"], :name => "user_id_index"
 
-  create_table "retailers_users", :force => true do |t|
-    t.integer "retailer_id"
-    t.integer "user_id"
-  end
-
-  add_index "retailers_users", ["retailer_id", "user_id"], :name => "index_retailers_users_on_retailer_id_and_user_id"
-  add_index "retailers_users", ["user_id"], :name => "index_retailers_users_on_user_id"
-
-  create_table "roles", :force => true do |t|
-    t.string    "name"
-    t.timestamp "created_at", :null => false
-    t.timestamp "updated_at", :null => false
-  end
-
   create_table "users", :force => true do |t|
     t.string    "email",                  :default => "",    :null => false
     t.string    "encrypted_password",     :default => "",    :null => false
@@ -93,10 +79,12 @@ ActiveRecord::Schema.define(:version => 20121026170151) do
     t.string    "last_name"
     t.string    "role"
     t.boolean   "verified",               :default => false
+    t.integer   "retailer_id"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+  add_index "users", ["retailer_id"], :name => "index_users_on_retailer_id"
 
 end
