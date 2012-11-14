@@ -1,8 +1,6 @@
 /* all xlarge inputs */
 
-form input.input-xlarge, form select.input-xlarge, form textarea.input-xxlarge		{
-	font-size: 1em;
-}
+
 
 /* for retailers/new  */
 form div.required label abbr, label.required abbr	{

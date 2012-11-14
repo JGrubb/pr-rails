@@ -929,7 +929,7 @@ form textarea {
   color: #444;
   margin: 0 0 10px 0;
   padding: 2px;
-  font-size: 0.8em;
+ /* font-size: 0.8em; */
 }
 
 form input.error,
