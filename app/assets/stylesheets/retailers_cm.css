@@ -1,6 +1,47 @@
-/* all xlarge inputs */
 
+/* /home */
 
+body.home h2.pageTitle	{
+	display: none;
+}
+	
+body.home h3	{
+	color: #78a22e;
+	font-size: 1.9em;
+}
+
+h2 sup, h3 sup, h4 sup	{
+	font-weight: normal;
+	font-size: .6em;
+}
+h2 sup	{
+	font-size: .3em;
+	position: relative;
+	top: -1.2em;
+	left: 0;
+}
+	
+/* FAQ */
+
+body.partner_faq h3.fold a	{
+	display: block;
+	text-decoration: none;
+	border-bottom: dotted 1px #d8cfb4; 
+	padding-bottom: 1px;
+}
+	
+body.partner_faq h3.fold + ol	{
+	margin-left: 0px;
+	padding-left: 3em;
+	border-bottom: solid 1px #d8cfb4;
+	padding-bottom: 20px;
+}
+	
+
+body.partner_faq h4 a	{
+	color: #000;
+	text-decoration: none;
+}
 
 /* for retailers/new  */
 form div.required label abbr, label.required abbr	{
@@ -55,6 +96,45 @@ div#missed_quiz_qs ul li:first-child	{
 	padding-top: 0px;
 }
 
+/* for /staff-training */
+
+h3.staff_training_consists	{
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+ol.staff_training_consists	{
+	margin-top: 0px;
+	margin-bottom: 20px;
+	font-size: 1.2em;
+}
+ol.staff_training_consists li	{
+	margin-bottom: 4px;
+}
+
+span#signup_for_training	{
+	display: inline-block;
+	font-family: 'Open Sans', Helvetica, Arial sans-serif;
+	list-style-type: none;
+	padding: 5px 10px;
+	margin: 10px;
+	color: #fff;
+	padding: 10px;
+	margin: 10px;
+	text-align: center; 
+	border: solid 1px #334e04;
+	background-color: #5d801f;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	font-size: .9em;
+}
+span#signup_for_training a	{
+	color: #fff;
+	font-size: 1.75em;
+	font-weight: 400;
+	padding: 0px 20px;
+}
+	
 
 /* for users/sign_up */
 form.form-horizontal input[type=submit]	{
@@ -133,47 +213,3 @@ span.pagetoplink	{
 	font-size: .9em;
 }
 	
-
-/* /home */
-
-body.home h2.pageTitle	{
-	display: none;
-}
-	
-body.home h3	{
-	color: #78a22e;
-	font-size: 1.9em;
-}
-
-h2 sup, h3 sup, h4 sup	{
-	font-weight: normal;
-	font-size: .6em;
-}
-h2 sup	{
-	font-size: .3em;
-	position: relative;
-	top: -1.2em;
-	left: 0;
-}
-	
-/* FAQ */
-
-body.partner_faq h3.fold a	{
-	display: block;
-	text-decoration: none;
-	border-bottom: dotted 1px #d8cfb4; 
-	padding-bottom: 1px;
-}
-	
-body.partner_faq h3.fold + ol	{
-	margin-left: 0px;
-	padding-left: 3em;
-	border-bottom: solid 1px #d8cfb4;
-	padding-bottom: 20px;
-}
-	
-
-body.partner_faq h4 a	{
-	color: #000;
-	text-decoration: none;
-}
