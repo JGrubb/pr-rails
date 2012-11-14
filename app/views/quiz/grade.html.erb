@@ -1,15 +1,33 @@
 <% if current_user.verified %>
 
-<h3>You passed.   </h3>
+<h2>Congratulations &mdash; you are the latest PlantRight<sup>&trade;</sup> graduate!</h2>
+
+<p>
+Thank you for taking the time to expand your invasive plant expertise. At this time, a few more members of your team still need to complete the PlantRight 101 training before your PlantRight Partnership is deemed official. When all designated individuals at your place of business have passed the exam, you will be notified by email and be granted access to the information and sales tools on PlantRight Partner Resources page.
+</p>
+
+<p>
+If you ever want to review the information contained in the PlantRight 101 training materials, just visit the My PlantRight page. You will also find a copy of your Certificate of Achievement there.
+</p>
+
+<p>
+Thanks in advance for putting your knowledge into action! 
+</p>
+
 
 <% else %>
-  <ul>
+ 
+<h2>Not quite &mdash; keep trying!</h2> 
+<p>In order to pass the PlantRight<sup>&trade;</sup> 101 training, all participants must answer each of the ten questions correctly. Fortunately, you can review the questions you missed by clicking <a href="#">here</a> and take the test again.</p>
+
+<div id="missed_quiz_qs">
+<strong>These are the questions you missed:</strong>
+ <ul>
   <% @wrong_answers.each do |a| %>
     <li><%= a %></li>
   <% end %>
   </ul>
-<h4>Not Quite – Keep trying!</h4> 
-<p>In order to pass the PlantRight<sup>&trade;</sup> 101 training, all participants must answer each of the ten questions correctly. Fortunately, you can review the questions you missed by clicking <a href="#">here</a> and take the test again.</p>
+</div>
 
 <p>You can also review the information included in the <a href="#">PlantRight 101 training materials section</a> before retaking the test.</p>
 

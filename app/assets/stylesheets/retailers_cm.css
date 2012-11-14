@@ -43,6 +43,18 @@ form[action="/quiz"] p	{
 	font-size: 1.1em;
 }
 
+/* for quiz failure page */
+
+div#missed_quiz_qs ul	{
+	margin-top: 2px;
+	color: #c82404;
+}
+
+div#missed_quiz_qs ul li:first-child	{
+	margin-top: 2px;
+	padding-top: 0px;
+}
+
 
 /* for users/sign_up */
 form.form-horizontal input[type=submit]	{
@@ -133,9 +145,15 @@ body.home h3	{
 	font-size: 1.9em;
 }
 
-body.home h3 sup	{
+h2 sup, h3 sup, h4 sup	{
 	font-weight: normal;
 	font-size: .6em;
+}
+h2 sup	{
+	font-size: .3em;
+	position: relative;
+	top: -1.2em;
+	left: 0;
 }
 	
 /* FAQ */
