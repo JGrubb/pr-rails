@@ -77,4 +77,43 @@ div#shared-links a	{
 	display: block;
 	margin: 1px 0px;
 }
+
+/* submit buttons	*/
+
+a.btn-primary, .btn-primary {
+color: white;
+text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+background-color: #a15334;
+border-solid: solid 1px #4d3c14;
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ab7a4b), to(#a15334));
+background-image: -webkit-linear-gradient(top, #ab7a4b, #a15334);
+background-image: -o-linear-gradient(top, #ab7a4b, #a15334);
+background-image: linear-gradient(to bottom, #ab7a4b, #a15334);
+background-image: -moz-linear-gradient(top, #ab7a4b, #a15334);
+background-repeat: repeat-x;
+border-color: #4d3c14;
+border-color: rgba(77, 60, 20, .3);
+}
 	
+	
+/* FAQ */
+
+h3.fold a	{
+	display: block;
+	text-decoration: none;
+	border-bottom: dotted 1px #d8cfb4; 
+	padding-bottom: 1px;
+}
+	
+h3.fold + ol	{
+	margin-left: 0px;
+	padding-left: 3em;
+	border-bottom: solid 1px #d8cfb4;
+	padding-bottom: 20px;
+}
+	
+
+div#faq_answers	h4 a	{
+	color: #000;
+	text-decoration: none;
+}
