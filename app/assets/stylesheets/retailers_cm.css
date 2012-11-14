@@ -1,5 +1,11 @@
+/* all xlarge inputs */
+
+form input.input-xlarge, form select.input-xlarge, form textarea.input-xxlarge		{
+	font-size: 1em;
+}
+
 /* for retailers/new  */
-form div.required label abbr	{
+form div.required label abbr, label.required abbr	{
 	display: none;
 }
 
@@ -115,6 +121,23 @@ span.pagetoplink	{
 	display: block;
 	text-align: center;
 	font-size: .9em;
+}
+	
+
+/* /home */
+
+body.home h2.pageTitle	{
+	display: none;
+}
+	
+body.home h3	{
+	color: #78a22e;
+	font-size: 1.9em;
+}
+
+body.home h3 sup	{
+	font-weight: normal;
+	font-size: .6em;
 }
 	
 /* FAQ */

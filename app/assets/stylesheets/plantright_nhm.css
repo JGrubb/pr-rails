@@ -103,10 +103,10 @@ margin: 0px 0px 20px;
 }
 
 #prContainer { 
-	width: 954px; 
+	width: 948px; 
 	background: #fff;
 	margin: 10px auto;
-	padding: 0px 0px 20px 6px;
+	padding: 0px 6px 20px 6px;
 	text-align: left;
 	-moz-box-shadow: 38px 0px 38px -38px rgba(77,60,20,.3),  -38px 0px 38px -38px rgba(77,60,20,.3);
 	-webkit-box-shadow: 38px 0px 38px -38px rgba(77,60,20,.3),  -38px 0px 38px -38px rgba(77,60,20,.3);
@@ -119,7 +119,7 @@ margin: 0px 0px 20px;
 #main { 
 	width: 780px;
 	float: left;
-	padding: 0px;
+	padding: 0px 0px 20px 0px;
 	border-top: solid 77px #4b3c17;
 	margin-top: -95px;
 } 
