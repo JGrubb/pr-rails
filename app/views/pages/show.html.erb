@@ -1,3 +1,4 @@
+<% content_for :body_class, @page.title.downcase.gsub(/ /, '_') %>
 <div id="content">
   <h2 class="pageTitle"><%= @page.title %></div>
 
