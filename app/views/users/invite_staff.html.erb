@@ -1,6 +1,6 @@
 <h3>Invite that staff</h3>
-<%= debug @user.methods.sort %>
-<%= form_tag create_staff_path, remote: true do %>
+
+<%= form_tag create_staff_path do %>
 
   <%= hidden_field :user, :password %>
   <%= hidden_field :user, :password_confirmation %>
@@ -8,3 +8,13 @@
   <%= submit_tag "Invite!" %>
 
 <% end %>
+
+<p>You've already sent invites to these email addresses</p>
+<ul>
+  <% @staff.each do |staff| %>
+    <% unless staff.id == current_user.id %>
+      <li><%= staff.email %><br />
+      <small>last login - <%= staff.last_sign_in_at %></small></li>
+    <% end %>
+  <% end %>
+</ul>

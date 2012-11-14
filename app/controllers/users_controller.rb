@@ -42,18 +42,19 @@ include Devise
   end
 
   def invite_staff
+    @staff = User.where(:retailer_id => current_user[:retailer_id])
     @user = User.new
-    @retailer = Retailer.where(:user_id => current_user.id).limit(1)
     @user.password = Random.rand(1000000).to_s.crypt('pr')
     @user.password_confirmation = @user.password
   end
 
   def create_staff
     @user = User.new(params[:user])
-    @user.retailers = Retailer.where(:user_id => current_user.id).limit(1)
+    @user.retailer = Retailer.find_by_created_by_user(current_user[:id])
     @user.save
-    @user.confirm!
+    @user.reload
     @user.send_reset_password_instructions
+    redirect_to :invite_staff
   end
 
   private

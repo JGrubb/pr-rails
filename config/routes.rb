@@ -15,7 +15,7 @@ PrRails::Application.routes.draw do
 
   controller 'users' do
     get 'users', to: 'users#index'
-    get 'users/invite-staff', to: 'users#invite_staff'
+    get 'users/invite-staff', to: 'users#invite_staff', as: :invite_staff
     post 'users/invite-staff', to: 'users#create_staff', as: :create_staff 
     get 'users/admins', to: 'users#admins', as: :admin_users
     get 'users/managers', to: 'users#managers', as: :manager_users

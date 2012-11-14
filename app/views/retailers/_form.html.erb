@@ -10,8 +10,6 @@
   </div>
 <% end %>
 
-<%= debug current_user %>
-
 <%= simple_form_for(@retailer, 
                     :html => { :class => "form-vertical retailer-form",
                                :id    => "new_retailer" }, 
@@ -33,7 +31,7 @@
 
   <label>Does your business have a "do-not-buy" plant list?</label>
   <div class="radios">
-    <%= f.collection_radio_buttons :do_not_buy_list, [[true, "Yes"], [false, "No"]], :first, :last, :label => "Does your business have a \"do-not-buy\" plant list?" %>
+    <%= f.collection_radio_buttons :do_not_buy_list, [["Yes", "Yes"], ["No", "No"]], :first, :last, :label => "Does your business have a \"do-not-buy\" plant list?" %>
   </div>
   <div class="clear">
   <%= f.input :customer_inquiry_frequency, :collection => Retailer::CUSTOMER_INQUIRY_OPTIONS, :label => "How often do customers ask for plants like periwinkle (Vinca major), green fountain grass (Pennisetum setaceum), pampas grass (Cortaderial selloana) and varieties of broom plants that are invasive in CA?" %></div>

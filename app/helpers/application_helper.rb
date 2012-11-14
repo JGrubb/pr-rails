@@ -41,6 +41,6 @@ module ApplicationHelper
   end 
 
   def employee?
-    current_user.role == USER::ROLE_OPTIONS[1]
+    current_user.role != USER::ROLE_OPTIONS[0]
   end
 end

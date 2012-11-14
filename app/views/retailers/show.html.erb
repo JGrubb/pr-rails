@@ -1,7 +1,14 @@
-<%= debug @retailer %>
-<%= debug @created_by_user %>
-<% @retailer.locations.each do |l| %>
-  <%= debug l %>
-<% end %>
+<h3><%= @retailer.name %></h3>
 
-<%= link_to "edit", edit_retailer_path(@retailer) %>
+<p>Note: these are all the data points that are available about this retailer.  </p>
+
+<dl>
+<% @retailer.attributes.each do |key, value| %>
+  <dt><%= key.capitalize.gsub /_/, ' ' %></dt>
+  <dd><%= value %></dd>
+<% end %>
+</dl>
+
+<% if can_admin_retailer(@retailer, current_user) %>
+  <%= link_to "edit", edit_retailer_path(@retailer) %>
+<% end %>
