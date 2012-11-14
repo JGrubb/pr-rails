@@ -9,6 +9,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= yield :body_class %>">
+<a name="pagetop"></a>
   <% if admin? %>
     <%= render "layouts/admin_menu" %>
   <% end %>

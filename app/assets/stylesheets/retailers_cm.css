@@ -80,7 +80,7 @@ div#shared-links a	{
 
 /* submit buttons	*/
 
-a.btn-primary, .btn-primary {
+a.btn-primary, .btn-primary, a.btn-success, .btn-success {
 color: white;
 text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 background-color: #a15334;
@@ -94,18 +94,39 @@ background-repeat: repeat-x;
 border-color: #4d3c14;
 border-color: rgba(77, 60, 20, .3);
 }
-	
+.btn:hover {
+  color: #fcfcde;
+  text-decoration: none;
+  background-color: #a15334;
+
+  background-image: none;
+  /*
+  -webkit-transition: background-color 0.1s linear;
+     -moz-transition: background-color 0.1s linear;
+       -o-transition: background-color 0.1s linear;
+          transition: background-color 0.1s linear;
+		  */
+}
+
+
+/* top of page link	*/
+
+span.pagetoplink	{
+	display: block;
+	text-align: center;
+	font-size: .9em;
+}
 	
 /* FAQ */
 
-h3.fold a	{
+body.partner_faq h3.fold a	{
 	display: block;
 	text-decoration: none;
 	border-bottom: dotted 1px #d8cfb4; 
 	padding-bottom: 1px;
 }
 	
-h3.fold + ol	{
+body.partner_faq h3.fold + ol	{
 	margin-left: 0px;
 	padding-left: 3em;
 	border-bottom: solid 1px #d8cfb4;
@@ -113,7 +134,7 @@ h3.fold + ol	{
 }
 	
 
-div#faq_answers	h4 a	{
+body.partner_faq h4 a	{
 	color: #000;
 	text-decoration: none;
 }
