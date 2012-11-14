@@ -24,7 +24,8 @@ PrRails::Application.routes.draw do
     get 'users/:id/edit', to: 'users#edit', as: :user_edit
     put 'users/:id', to: 'users#update'
   end
-
+  
+  get 'partner-resources', :to => 'pages#partner_resources'
   get ':id', :to => 'pages#show', :as => :page
   put ':id', :to => 'pages#update', :as => :page
   # The priority is based upon order of creation:

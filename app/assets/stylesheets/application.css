@@ -14,7 +14,7 @@
  *= require retailers.css.sass
  *= require retailers_cm.css
  *= require plantright_nhm.css
- *= new_styles.css
+ *= require new_styles.css
  */
 
 .clear {
