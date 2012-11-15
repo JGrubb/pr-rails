@@ -6,4 +6,5 @@ jQuery(document).ready ($) ->
   $('h3.fold').next('ol').hide()
   $('h3.fold').click (e) ->
     e.preventDefault()
+    $(this).toggleClass('open')
     $(this).next('ol').toggle()
