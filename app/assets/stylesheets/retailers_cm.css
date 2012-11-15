@@ -23,14 +23,27 @@ h2 sup	{
 	
 /* FAQ */
 
-body.partner_faq h3.fold a	{
+h3.fold	{
+	margin-top: 0px;
+}
+
+h3.fold a	{
 	display: block;
 	text-decoration: none;
 	border-bottom: dotted 1px #d8cfb4; 
 	padding-bottom: 1px;
 }
+
+h3.fold a:before	{
+	content: '+ ';
+}
+
+h3.fold.open a:before	{
+	content: '- ';
+}
+
 	
-body.partner_faq h3.fold + ol	{
+h3.fold + ol	{
 	margin-left: 0px;
 	padding-left: 3em;
 	border-bottom: solid 1px #d8cfb4;
@@ -38,9 +51,12 @@ body.partner_faq h3.fold + ol	{
 }
 	
 
-body.partner_faq h4 a	{
+div#faq_answers h4 a	{
 	color: #000;
 	text-decoration: none;
+}
+div#faq_answers ul	{
+	margin-left: 0px;
 }
 
 /* for retailers/new  */
@@ -152,6 +168,23 @@ label[for=user_remember_me]	{
 }
 
 
+/* for users/n */
+
+ul#pr_profile_data	{
+	list-style-type: none;
+	margin-left: 0px;
+	padding-left: 0px;
+}
+ul#pr_profile_data li	{
+	font-size: 1.2em;
+	margin-top: 3px;
+	padding: 2px 5px;
+}
+ul#pr_profile_data li#pr_profile_name	{
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
 
 /* for multiple forms */
 
@@ -176,33 +209,71 @@ div#shared-links a	{
 
 /* submit buttons	*/
 
-a.btn-primary, .btn-primary, a.btn-success, .btn-success {
-color: white;
-text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-background-color: #a15334;
-border-solid: solid 1px #4d3c14;
-background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ab7a4b), to(#a15334));
-background-image: -webkit-linear-gradient(top, #ab7a4b, #a15334);
-background-image: -o-linear-gradient(top, #ab7a4b, #a15334);
-background-image: linear-gradient(to bottom, #ab7a4b, #a15334);
-background-image: -moz-linear-gradient(top, #ab7a4b, #a15334);
-background-repeat: repeat-x;
-border-color: #4d3c14;
-border-color: rgba(77, 60, 20, .3);
+
+form input[type="submit"] {
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
+
+a.btn-primary, .btn-primary, a.btn-success, .btn-success, .btn-info, a.btn-info {
+	display: inline-block;
+	padding: 4px 14px;
+	font-size: 14px;
+	font-weight: normal;
+	color: #fff;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	line-height: 20px;
+	text-align: center;
+	vertical-align: middle;
+	
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+	
+	background-color: #A15334;
+	border-solid: solid 1px #4d3c14;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#AB7A4B), to(#A15334));
+	background-image: -webkit-linear-gradient(top, #AB7A4B, #A15334);
+	background-image: -o-linear-gradient(top, #AB7A4B, #A15334);
+	background-image: -moz-linear-gradient(top, #AB7A4B, #A15334);
+	background-image: linear-gradient(to bottom, #AB7A4B, #A15334);
+	background-repeat: repeat-x;
+	border-color: #4D3C14;
+	border-color: rgba(77, 60, 20, .3);
+}
+
+.btn-info, a.btn-info {
+	background-color: #d8cfb4;
+	border-solid: solid 1px #4d3c14;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#d8cfb4), to(#c5bb9c));
+	background-image: -webkit-linear-gradient(top, #d8cfb4, #c5bb9c);
+	background-image: -o-linear-gradient(top, #d8cfb4, #c5bb9c);
+	background-image: -moz-linear-gradient(top, #d8cfb4, #c5bb9c);
+	background-image: linear-gradient(to bottom, #d8cfb4, #c5bb9c);
+	background-repeat: repeat-x;
+	border-color: #91826a;
+	border-color: rgba(145, 130, 106, .3);
+	color: #5f4f28;
+ }
+
 .btn:hover {
-  color: #fcfcde;
+  color: #fcfce6;
   text-decoration: none;
   background-color: #a15334;
-
   background-image: none;
-  /*
-  -webkit-transition: background-color 0.1s linear;
-     -moz-transition: background-color 0.1s linear;
-       -o-transition: background-color 0.1s linear;
-          transition: background-color 0.1s linear;
-		  */
 }
+ 
+a.btn-info:hover {
+  color: #5f4f28;
+  text-decoration: none;
+  background-color: #bfac8e;
+  background-image: none;
+}
+
 
 
 /* top of page link	*/
@@ -213,3 +284,7 @@ span.pagetoplink	{
 	font-size: .9em;
 }
 	
+/* adjacent headers */
+h2 + h3	{
+	margin-top: -20px;
+}
