@@ -23,14 +23,27 @@ h2 sup	{
 	
 /* FAQ */
 
-body.partner_faq h3.fold a	{
+h3.fold	{
+	margin-top: 0px;
+}
+
+h3.fold a	{
 	display: block;
 	text-decoration: none;
 	border-bottom: dotted 1px #d8cfb4; 
 	padding-bottom: 1px;
 }
+
+h3.fold a:before	{
+	content: '+ ';
+}
+
+h3.fold.open a:before	{
+	content: '- ';
+}
+
 	
-body.partner_faq h3.fold + ol	{
+h3.fold + ol	{
 	margin-left: 0px;
 	padding-left: 3em;
 	border-bottom: solid 1px #d8cfb4;
