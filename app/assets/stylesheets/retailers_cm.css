@@ -51,9 +51,12 @@ h3.fold + ol	{
 }
 	
 
-body.partner_faq h4 a	{
+div#faq_answers h4 a	{
 	color: #000;
 	text-decoration: none;
+}
+div#faq_answers ul	{
+	margin-left: 0px;
 }
 
 /* for retailers/new  */
