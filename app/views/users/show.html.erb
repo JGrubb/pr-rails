@@ -1,5 +1,13 @@
-<h3><%= @user.full_name %></h3>
-<div><%= @user.role %></div>
-<div><%= mail_to @user.email %></div>
+<h2 class="pageTitle">Your PlantRight Profile</h2>
+
+
+<ul id="pr_profile_data">
+<li id="pr_profile_name"><%= @user.full_name %></li>
+<li><%= @user.role %></li>
+<li><%= mail_to @user.email %></li>
+<li><%= @user.verified %></li>
+</li>
+
+ 
 
 <%= debug @user %>
