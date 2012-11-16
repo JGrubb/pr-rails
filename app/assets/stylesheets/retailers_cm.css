@@ -127,28 +127,29 @@ ol.staff_training_consists li	{
 	margin-bottom: 4px;
 }
 
-span#signup_for_training	{
+div.signup_for_training	{
 	display: inline-block;
 	font-family: 'Open Sans', Helvetica, Arial sans-serif;
 	list-style-type: none;
-	padding: 5px 10px;
+	padding: 4px 8px;
 	margin: 10px;
 	color: #fff;
 	padding: 10px;
 	margin: 10px;
 	text-align: center; 
-	border: solid 1px #334e04;
+	border: solid 1px #61871f;
 	background-color: #5d801f;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	border-radius: 10px;
-	font-size: .9em;
+	box-shadow:  -1px 1px 2px rgba(0, 0, 0, .2);
 }
-span#signup_for_training a	{
+div.signup_for_training a	{
 	color: #fff;
-	font-size: 1.75em;
-	font-weight: 400;
+	font-size: 1.5em;
+	font-weight: 600;
 	padding: 0px 20px;
+	text-shadow: -2px 3px 2px rgba(79, 115, 17, .7);
 }
 	
 
