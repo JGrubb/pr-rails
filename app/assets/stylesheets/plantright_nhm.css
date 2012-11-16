@@ -135,7 +135,7 @@ body#partner_only #main {
 
 #header	{
 	margin: 0px 8px 2px 10px;
-	/*background: url(../images/header_bg_stripe.png) repeat-x top right;*/
+	/*background: url(header_bg_stripe.png) repeat-x top right;*/
 }
 
 #header img#logo	{
@@ -186,7 +186,7 @@ body#partner_only #main {
 
 
 #header div#donate a:hover	{
-	background: url(../images/donate_button_2012.png) no-repeat left -78px;
+	background: url(donate_button_2012.png) no-repeat left -78px;
 	color: #a83000;
 }
 	
@@ -241,6 +241,9 @@ body#partner_only #main {
 	padding-left:11px;
 }
 
+#leftnav ul.menu li.dhtml-menu.collapsed ul.menu {
+  display: none;
+}
 
 #leftnav ul.menu li.dhtml-menu li.fake-leaf	{
 	display: none;
