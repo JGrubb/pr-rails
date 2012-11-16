@@ -16,7 +16,7 @@ gem 'awesome_nested_fields'
 gem 'will_paginate'
 gem 'annotate'
 gem 'redcarpet'
-gem 'pg'
+#gem 'pg'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -42,7 +42,7 @@ gem 'jquery-rails'
 # gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano'
 
 # To use debugger
 # gem 'debugger'
