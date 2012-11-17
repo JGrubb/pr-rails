@@ -28,6 +28,10 @@ module ApplicationHelper
     markdown.render(text).html_safe
   end
 
+  def xlink_to(str, dest)
+    link_to str, "http://plantright.org/#{dest}"
+  end
+
   def admin?
     current_user && current_user.admin?
   end
