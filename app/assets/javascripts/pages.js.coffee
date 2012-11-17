@@ -10,12 +10,9 @@ jQuery(document).ready ($) ->
     $(this).next('ol').toggle()
   $('li.parent').click (e) ->
     $this = $(this)
-    e.preventDefault()
     if $(this).hasClass 'collapsed'
+      e.preventDefault()
       $('ul.menu', this).slideDown( ->
         $this.removeClass 'collapsed'
-        $this.addClass 'expanded' )
-    else
-      $('ul.menu', this).slideUp( ->
-        $this.removeClass 'expanded'
-        $this.addClass 'collapsed' )
+        $this.addClass 'expanded' 
+        )
