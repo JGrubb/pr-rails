@@ -1,5 +1,7 @@
 <p>Welcome <%= @resource.email %>!</p>
 
+<p>You've been invited to participate in this cool thing!  Please follow the link below to confirm your account with us, and then fill in the rest of your profile information.</p>
+
 <p>You can confirm your account email through the link below:</p>
 
 <p><%= link_to 'Confirm my account', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>

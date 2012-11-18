@@ -44,16 +44,16 @@ include Devise
   def invite_staff
     @staff = User.where(:retailer_id => current_user[:retailer_id])
     @user = User.new
-    @user.password = Random.rand(1000000).to_s.crypt('pr')
-    @user.password_confirmation = @user.password
   end
 
   def create_staff
     @user = User.new(params[:user])
+    @user.password = @user.email.split('@')[0]
+    @user.password_confirmation = @user.password
     @user.retailer = Retailer.find_by_created_by_user(current_user[:id])
     @user.save
     @user.reload
-    @user.send_reset_password_instructions
+    @user.send_confirmation_instructions
     redirect_to :invite_staff
   end
 
