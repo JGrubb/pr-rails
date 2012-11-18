@@ -48,12 +48,10 @@ include Devise
 
   def create_staff
     @user = User.new(params[:user])
-    @user.password = @user.email.split('@')[0]
+    @user.password = @user.email.split('@')[0] + "pr2012"
     @user.password_confirmation = @user.password
     @user.retailer = Retailer.find_by_created_by_user(current_user[:id])
-    @user.save
-    @user.reload
-    @user.send_confirmation_instructions
+    @user.save!
     redirect_to :invite_staff
   end
 

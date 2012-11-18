@@ -7,6 +7,7 @@
     <th>User</th>
     <th>role</th>
     <th>Verified?</th>
+    <th>Retailer</th>
     <th></th>
   </tr>
 <% @users.each do |user| %>
@@ -16,6 +17,7 @@
     <td><%= mail_to user.email %></td>
     <td><%= user_role(user) %></td>
     <td><%= current_user.verified? %></td>
+    <td><%= link_to(user.retailer.name, user.retailer) if user.retailer %></td>
     <td><%= link_to "edit user", user_edit_path(user) %></td>
   </tr>
 <% end %>

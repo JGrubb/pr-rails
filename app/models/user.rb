@@ -44,6 +44,8 @@ class User < ActiveRecord::Base
 
   belongs_to :retailer
 
+  after_create :send_confirmation_mailer
+
   def must_be_valid_role
     unless ROLE_OPTIONS.include?(role)
       errors.add :role, "must be one of the values from the list"
@@ -58,9 +60,16 @@ class User < ActiveRecord::Base
     end
   end
 
+
   ROLE_OPTIONS = [
     'Retail Representative (owner, manager, etc.)',
     'Retail employee (involved in plant purchasing decisions)',
     'Retail employee (not involved with plant purchasing)'
   ]  
+
+  protected
+
+  def send_confirmation_mailer
+    self.send_confirmation_instructions
+  end
 end
