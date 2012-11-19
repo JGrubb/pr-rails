@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   
-  before_filter :authorize_admin!, :except => [:show, :staff_training]
+  before_filter :authorize_admin!, :except => [:show, :staff_training, :partner_resources]
 
   def index
     @pages = Page.all
