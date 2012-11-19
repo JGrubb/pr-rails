@@ -11,7 +11,9 @@ PrRails::Application.routes.draw do
     post 'quiz', :to => 'quiz#grade', :as => :grade_quiz
   end
 
-  devise_for :users, path_names: { :sign_in => "login", :sign_out => "logout" }
+  devise_for  :users,
+              path_names: { :sign_in => "login", :sign_out => "logout" },
+              controllers: { confirmations: "confirmations" }
 
   controller 'users' do
     get 'users', to: 'users#index'
