@@ -25,7 +25,7 @@ PrRails::Application.routes.draw do
     put 'users/:id', to: 'users#update'
   end
   
-  get 'partner-resources',  :to => 'pages#partner_resources'
+  get 'partner-resources',  :to => 'pages#partner_resources', as: :partner_resources
   get 'partner-faq',        :to => 'pages#partner_faq'
   get 'staff-training',     :to => 'pages#staff_training'
   get ':id', :to => 'pages#show', :as => :page

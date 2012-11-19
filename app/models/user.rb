@@ -44,7 +44,7 @@ class User < ActiveRecord::Base
 
   belongs_to :retailer
 
-  after_create :send_confirmation_mailer
+#after_create :send_confirmation_mailer
 
   def must_be_valid_role
     unless ROLE_OPTIONS.include?(role)
