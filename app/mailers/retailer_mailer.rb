@@ -6,7 +6,7 @@ class RetailerMailer < ActionMailer::Base
   end
 
   def after_confirm(user)
-    mail(:to => user.email, :subject => "PlantRight 1-1 registration - CONFIRMED")
+    mail(:to => user.email, :subject => "PlantRight 101 registration - CONFIRMED")
   end
 
 end
