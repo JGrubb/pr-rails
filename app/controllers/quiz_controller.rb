@@ -13,7 +13,7 @@ class QuizController < ApplicationController
     session[:grade] = score_info
   	current_user.update_attribute(:verified, quiz.passed?)
     if quiz.passed?
-      PassQuiz.pass_quiz_email(current_user).deliver
+      RetailerMailer.pass_quiz_email(current_user).deliver
     end
     @wrong_answers = []
     score_info.each { |i| @wrong_answers << Quiz::questions[i] }

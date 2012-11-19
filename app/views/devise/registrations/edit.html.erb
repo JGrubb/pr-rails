@@ -1,11 +1,18 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
+<% if current_user.verified? %>
+  <p><strong><%= current_user.first_name || "Dear unnamed user" %>, you are a certified PlantRight participant!</strong></p>
+<% else %>
+<p><%= current_user.first_name %>, you are not yet certified.  You can get ready for certification with our <%= link_to "PlantRight 101 training materials", staff_training_path %>, or get certified right away by <%= link_to "taking the PlantRight quiz", quiz_path %>. Something like that :).</p>
+<% end %>
+
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
 
   <%= f.input :first_name, :input_html => { :class => "input-xlarge" } %>
   <%= f.input :last_name, :input_html => { :class => "input-xlarge" } %>
   <%= f.input :email, :input_html => { :class => "input-xlarge" } %>
+  <%= f.input :role, :collection => User::ROLE_OPTIONS, :input_html => { :class => "input-xlarge" } %>
   <%= f.input :password, :autocomplete => "off", :label => 'Password <i>(leave blank if you don\'t want to change it)</i>', :input_html => { :class => "input-xlarge" } %>
   <%= f.input :password_confirmation, :input_html => { :class => "input-xlarge" } %>
   <%= f.input :current_password, :label => 'Current Password <i>(we need your current password to confirm your changes)</i>', :input_html => { :class => "input-xlarge" } %>
