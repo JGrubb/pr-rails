@@ -13,10 +13,23 @@ class QuizController < ApplicationController
     session[:grade] = score_info
   	current_user.update_attribute(:verified, quiz.passed?)
     if quiz.passed?
+      check_retailer_status(current_user)
       RetailerMailer.pass_quiz_email(current_user).deliver
     end
     @wrong_answers = []
     score_info.each { |i| @wrong_answers << Quiz::questions[i] }
     session[:answers] = @wrong_answers
   end
+
+  protected
+
+  def check_retailer_status(user)
+    users = User.where(:retailer_id => user.retailer_id).where(:verified => false)
+    if users.count >= 1
+      return
+    else
+      RetailerMailer.all_accounts_verified(user).deliver
+    end
+  end
+
 end

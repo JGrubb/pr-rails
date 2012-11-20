@@ -10,4 +10,8 @@ class RetailerMailer < ActionMailer::Base
     mail(:to => user.email, :subject => "PlantRight 101 registration - CONFIRMED")
   end
 
+  def all_accounts_verified(user)
+    manager = User.where(:retailer_id => user.retailer_id).where(:role => User::ROLE_OPTIONS[0])
+    mail(:to => manager.email, :subject => "Congratulations and Welcome, PlantRight Partner")
+  end
 end
