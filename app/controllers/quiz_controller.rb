@@ -2,6 +2,10 @@ class QuizController < ApplicationController
 	before_filter :require_user
 
   def index
+    if current_user.verified?
+      flash[:alert] = "You've already passed the quiz!  You're all set."
+      redirect_to root_path
+    end
 		@questions = Quiz::questions
 		@choices = Quiz::choices
   end
