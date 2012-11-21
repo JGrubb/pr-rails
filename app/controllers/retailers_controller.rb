@@ -37,6 +37,7 @@ class RetailersController < ApplicationController
 
 
   def show
+    @users = User.where(:retailer_id => @retailer.id)
   end
 
   def destroy

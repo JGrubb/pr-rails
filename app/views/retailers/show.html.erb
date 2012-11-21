@@ -9,6 +9,23 @@
 <% end %>
 </dl>
 
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Last signed in</th>
+    <th>Completed verification?</th>
+  </tr>
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.full_name || "Hasn't filled in profile" %></td>
+    <td><%= mail_to user.email, user.email %></td>
+    <td><%= time_ago_in_words(user.last_sign_in_at) || "never" %></td>
+    <td><%= user.verified? ? "Yes" : "No" %></td>
+  </tr>
+<% end %>
+</table>
+
 <% if can_admin_retailer(@retailer, current_user) %>
   <%= link_to "edit", edit_retailer_path(@retailer) %>
 <% end %>
