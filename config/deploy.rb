@@ -21,7 +21,7 @@ namespace :deploy do
   end
 
   task :bundle_install do
-    run "cd #{current_path} && bundle install"
+    run "cd #{current_release} && bundle install"
   end
 end
 # if you want to clean up old releases on each deploy uncomment this:

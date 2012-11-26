@@ -17,7 +17,7 @@ gem 'will_paginate'
 gem 'annotate'
 gem 'redcarpet'
 gem 'mysql2'
-#gem 'psych'
+gem 'psych'
 
 # Gems used only for assets and not required
 # in production environments by default.
