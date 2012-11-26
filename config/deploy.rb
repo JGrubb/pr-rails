@@ -11,6 +11,7 @@ role :db,  "plantright", :primary => true # This is where Rails migrations will 
 default_run_options[:pty] = true
 set :user, "rubyuser"
 ssh_options[:forward_agent] = true
+set :use_sudo, false
 
 after "deploy", "deploy:copydbyaml"
 
