@@ -62,7 +62,8 @@ class User < ActiveRecord::Base
 
 
   ROLE_OPTIONS = [
-    'Retail Representative (owner, manager, etc.)',
+    'Retail Representative (owner, manager, etc. that is involved with purchasing decisions)',
+    'Retail Representative (owner, manager, etc. that is not involved with purchasing decisions)',
     'Retail employee (involved in plant purchasing decisions)',
     'Retail employee (not involved with plant purchasing)'
   ]  

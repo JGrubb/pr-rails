@@ -77,6 +77,6 @@ class Quiz
   
   # Boolean as to whether the user passed or not
   def passed?
-    @passed = (@score >= 4 ? true : false)
+    @passed = (@score >= 10 ? true : false)
   end
 end
