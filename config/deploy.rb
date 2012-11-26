@@ -19,9 +19,14 @@ namespace :deploy do
   task :copydbyaml do
     run "cp #{shared_path}/database.yml #{current_path}/config/database.yml"
   end
+
+  task :bundle_install do
+    run "cd #{current_path} && bundle install"
+  end
 end
 # if you want to clean up old releases on each deploy uncomment this:
 after "deploy:restart", "deploy:cleanup"
+before "deploy:assets:precompile", "deploy:bundle_install"
 
 # if you're still using the script/reaper helper you will need
 # these http://github.com/rails/irs_process_scripts
